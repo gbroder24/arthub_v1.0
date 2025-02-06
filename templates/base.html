@@ -37,15 +37,17 @@
     <title>Arthub {% block extra_title %}{% endblock %}</title>
   </head>
   <body>
-
     <header class="container-fluid fixed-top">
-      <div id="topnav" class="row bg-white pt-lg-2 d-none d-lg-flex">
-          <div class="col-12 col-lg-4 my-auto py-1 py-lg-0 text-center text-lg-left">
+      <div id="topnav" class="row bg-white pt-lg-2">
+          <!-- Logo -->
+          <div class="col-12 col-lg-3 my-auto py-1 py-lg-0 text-center text-lg-left">
               <a href="{% url 'home' %}" class="nav-link main-logo-link">
                   <h2 class="logo-font text-black my-0"><strong>Arthub</strong></h2>
               </a>
           </div>
-          <div class="col-12 col-lg-4 my-auto py-1 py-lg-0">
+    
+          <!-- Search Bar -->
+          <div class="col-12 col-lg-3 my-auto py-1 py-lg-0 hide-on-mobile">
               <form method="GET" action="">
                   <div class="input-group w-100">
                       <input class="form-control border border-black rounded-0" type="text" name="q" placeholder="Search our site">
@@ -59,7 +61,22 @@
                   </div>
               </form>
           </div>
-          <div class="col-12 col-lg-4 my-auto py-1 py-lg-0">
+
+          <!-- Navigation Section moved to this row -->
+          
+            <div class="col-12 col-lg-3 my-auto py-1 py-lg-0">
+              <nav class="navbar navbar-expand-lg navbar-light w-100">
+                  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#main-nav" aria-controls="main-nav" aria-expanded="false" aria-label="Toggle navigation">
+                      <span class="navbar-toggler-icon"></span>
+                  </button>
+                  {% include 'includes/mobile-top-header.html' %}
+                  {% include 'includes/main-nav.html' %}
+              </nav>
+            </div>
+          
+    
+          <!-- Account and Shopping Bag (Right Side) -->
+          <div class="col-12 col-lg-3 my-auto py-1 py-lg-0 hide-on-mobile">
               <ul class="list-inline list-unstyled text-center text-lg-right my-0">
                   <li class="list-inline-item dropdown">
                       <a class="text-black nav-link" href="#" id="user-options" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -87,9 +104,9 @@
                               <div><i class="fas fa-shopping-bag fa-lg"></i></div>
                               <p class="my-0">
                                   {% if grand_total %}
-                                      ${{ grand_total|floatformat:2 }}
+                                      €{{ grand_total|floatformat:2 }}
                                   {% else %}
-                                      $0.00
+                                      €0.00
                                   {% endif %}
                               </p>
                           </div>
@@ -97,22 +114,19 @@
                   </li>
               </ul>
           </div>
+    
+
       </div>
-      <div class="row bg-white">
-          <nav class="navbar navbar-expand-lg navbar-light w-100">
-              <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#main-nav" aria-controls="main-nav" aria-expanded="false" aria-label="Toggle navigation">
-                  <span class="navbar-toggler-icon"></span>
-              </button>
-              {% include 'includes/mobile-top-header.html' %}
-              {% include 'includes/main-nav.html' %}
-          </nav>
-      </div>
+    
+      <!-- Delivery Banner -->
       <div id="delivery-banner" class="row text-center">
           <div class="col bg-black text-white">
               <h4 class="logo-font my-1">30% Off Prints and Free Shipping over €{{ free_delivery_threshold }}!</h4>                
           </div>            
       </div>
-  </header>
+    </header>
+    
+    
   
 
     {% if messages %}

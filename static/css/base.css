@@ -103,3 +103,10 @@ body {
           padding-top: 164px;
       }
   }
+
+  /* icons hidden only on medium and small */
+  @media (max-width: 991px) {
+    .hide-on-mobile {
+        display: none !important;
+    }
+}
