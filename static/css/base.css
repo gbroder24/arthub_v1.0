@@ -101,22 +101,53 @@ body {
         font-family: 'Playfair Display', serif;
     }
 
-      .fixed-top-desktop-only {
-          position: fixed;
-          top: 0;
-          right: 0;
-          left: 0;
-          z-index: 1030;
-      }
-  
-      .header-container {
-          padding-top: 164px;
-      }
+    .fixed-top-desktop-only {
+        position: fixed;
+        top: 0;
+        right: 0;
+        left: 0;
+        z-index: 1030;
+    }
+
+    .header-container {
+        padding-top: 164px;
+    }
   }
 
   /* icons hidden only on medium and small */
   @media (max-width: 991px) {
     .hide-on-mobile {
         display: none !important;
+    }
+
+    /* pad the top a bit when navbar is collapsed on mobile */
+    .header-container {
+        padding-top: 200px;
+    }
+
+    body {
+        height: calc(100vh - 200px);
+    }
+}
+
+/* pad the top a bit when navbar is collapsed on mobile */
+@media (max-width: 425px) {
+    .header-container {
+        padding-top: 230px;
+    }
+
+    body {
+        height: calc(100vh - 230px);
+    }
+}
+
+/* pad the top a bit when navbar is collapsed on mobile */
+@media (max-width: 375px) {
+    .header-container {
+        padding-top: 300px;
+    }
+
+    body {
+        height: calc(100vh - 300px);
     }
 }
