@@ -7,24 +7,29 @@ from products.models import Product
 def bag_contents(request):
 
     bag_items = []
-    total = 0
+    total_with_discount = 0
     product_count = 0
-    discount_percentage = 0
+    # discount_percentage = 0
     bag = request.session.get('bag', {})
 
     for item_id, quantity in bag.items():
         product = get_object_or_404(Product, pk=item_id)
-        total += quantity * product.price
+        # Apply discount to the product price for total
+        discounted_price = product.price * Decimal(
+            1 - product.discount_percentage / 100
+            )
+        total_with_discount += quantity * discounted_price
         product_count += quantity
         bag_items.append({
             'item_id': item_id,
             'quantity': quantity,
             'product': product,
+            'discounted_price': discounted_price,  # Pass the discounted price
         })
 
     # Apply % discount to the total
-    discount_percentage = settings.DISCOUNT_PERCENTAGE  # % discount
-    total_with_discount = total * Decimal(1 - discount_percentage / 100)
+    # discount_percentage = settings.DISCOUNT_PERCENTAGE  # % discount
+    # total_with_discount = total * Decimal(1 - discount_percentage / 100)
 
     if total_with_discount < settings.FREE_DELIVERY_THRESHOLD:
         delivery = total_with_discount * Decimal(
