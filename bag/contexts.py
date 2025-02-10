@@ -24,12 +24,14 @@ def bag_contents(request):
             'item_id': item_id,
             'quantity': quantity,
             'product': product,
-            'discounted_price': discounted_price,  # Pass the discounted price
+            # Pass the discounted price
+            'discounted_price': discounted_price,
         })
 
     # Apply % discount to the total
     # discount_percentage = settings.DISCOUNT_PERCENTAGE  # % discount
-    # total_with_discount = total * Decimal(1 - discount_percentage / 100)
+    # total_with_discount =
+    # total * Decimal(1 - discount_percentage / 100)
 
     if total_with_discount < settings.FREE_DELIVERY_THRESHOLD:
         delivery = total_with_discount * Decimal(

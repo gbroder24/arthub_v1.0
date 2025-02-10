@@ -19,7 +19,11 @@ class Category(models.Model):
 
 
 class Product(models.Model):
-    category = models.ForeignKey('Category', null=True, blank=True, on_delete=models.SET_NULL)
+    category = models.ForeignKey(
+        'Category',
+        null=True,
+        blank=True,
+        on_delete=models.SET_NULL)
     sku = models.CharField(max_length=254, null=True, blank=True)
     artist = models.CharField(max_length=254)
     name = models.CharField(max_length=254)
@@ -31,7 +35,11 @@ class Product(models.Model):
         default=0,  # Set default discount percentage to 0
         help_text="Discount percentage applied to the product price"
     )
-    rating = models.DecimalField(max_digits=6, decimal_places=2, null=True, blank=True)
+    rating = models.DecimalField(
+        max_digits=6,
+        decimal_places=2,
+        null=True,
+        blank=True)
     image_url = models.URLField(max_length=1024, null=True, blank=True)
     image = models.ImageField(null=True, blank=True)
 
