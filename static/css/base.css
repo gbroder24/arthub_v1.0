@@ -233,6 +233,50 @@ input[name='q']::placeholder {
 	color: #17a2b8; /* text-info */
 }
 
+/* -------- ABOUT PAGE -------- */
+
+#about-header {
+    padding-top: 83px;
+    margin-top: 0;
+}
+
+.about-text {
+    max-width: 500px;
+}
+
+.about-text-container-left {
+    display: flex;
+    justify-content: flex-start;
+}
+
+.about-text-container-right {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.about-section-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.about-img {
+    margin-top: 53px;
+    border-radius: 10px;
+    box-shadow: 1px 2px 5px #00000099;
+}
+
+#about-last-img {
+    object-fit: cover;
+    margin-bottom: 25px;
+}
+
+#about-button-container {
+    display: flex;
+    justify-content: center;
+    
+}
+
 /* Product Form */
 
 .btn-file {

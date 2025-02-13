@@ -1,0 +1,110 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block page_header %}
+    <div class="container header-container">
+        <div class="row">
+            <div class="col"></div>
+        </div>
+    </div>
+{% endblock %}
+
+{% block content %}
+<div class="overlay"></div>
+    <div class="container-fluid text-black">
+        <div class="row">
+            <div class="col text-center mt-3">
+                <h2 class="logo-font">About Us</h2>
+                    <hr class="w-75 mb-1">
+            </div>
+        </div>
+
+  <!-- ABOUT US FEATURES -->
+  <div class="container marketing">
+    <!-- FIRST FEATURE -->
+    <div class="row featurette">
+      <div class="col-md-7 about-section-container">
+        <h2 class="logo-font mt-3 mb-2"><strong>Who We Are</strong></h2>
+        <p class="lead">
+          At Arthub, we are passionate about bringing the world’s greatest
+          masterpieces to life. Specializing in high-quality art prints of
+          renowned Post-Impressionist artists like Van Gogh, Cézanne, Seurat,
+          and more, we strive to make iconic art accessible to everyone. Whether
+          you’re an art aficionado or just looking to elevate your space, we
+          offer a curated collection of timeless artwork that inspires
+          creativity and adds a personal touch to any room.
+        </p>
+      </div>
+      <div class="col-md-5">
+        <img src="/media/about-who-we-are.jpg" alt="" class="about-img img-fluid mx-auto" />
+      </div>
+    </div>
+
+    <hr class="w-100 mb-1" />
+
+    <!-- SECOND FEATURE -->
+    <div class="row featurette">
+      <div class="col-md-7 order-md-2 about-section-container">
+        <h2 class="logo-font mt-3 mb-2"><strong>What We Do</strong></h2>
+        <p class="lead">
+          We offer premium, museum-quality art prints of some of the most
+          celebrated works in history. Our collection includes everything from
+          classic post-impressionist masterpieces, each carefully printed on
+          high-grade materials to ensure the colors and details stand the test
+          of time. Whether you’re decorating your home, office, or gallery, we
+          make it easy for you to own a piece of art history, delivered straight
+          to your door.
+        </p>
+      </div>
+      <div class="col-md-5 order-md-1">
+        <img
+          src="/media/about-what-we-do.jpg"
+          alt=""
+          class="about-img img-fluid mx-auto"
+        />
+      </div>
+    </div>
+
+    <hr class="w-100 mb-1" />
+
+    <!-- THIRD FEATURE -->
+    <div class="row featurette">
+      <div class="col-md-7 about-section-container">
+        <h2 class="logo-font mt-3 mb-2"><strong>Why Choose Us</strong></h2>
+        
+          <h6 class="logo-font mt-3 mb-2"><strong>Authenticity and Quality</strong></h6>
+          <p class="lead">We use the finest materials and printing
+          techniques to deliver art prints that are true to the originals,
+          ensuring rich colors, sharp details, and long-lasting quality.</p>
+          <h6 class="logo-font mt-3 mb-2"><strong>Affordable Masterpiece</strong></h6>
+          <p class="lead">We believe that everyone should be able to
+          experience the beauty of iconic art without breaking the bank. Our
+          prices make owning high-quality prints accessible to all.</p>
+          <h6 class="logo-font mt-3 mb-2"><strong>Curated Selection</strong></h6>
+          <p class="lead">Our team carefully curates each piece, offering a
+          collection that represents the most famous works of history’s greatest
+          artists.</p>
+          <h6 class="logo-font mt-3 mb-2"><strong>Easy Shopping and Fast Shipping</strong></h6>
+          <p class="lead">With our user-friendly online
+          store, you can easily browse and find the perfect artwork for your
+          space, with fast and reliable shipping.</p>
+          <h6 class="logo-font mt-3 mb-2"><strong>Customer Satisfaction</strong></h6>
+          <p class="lead">Your satisfaction is our top priority. If you're not happy with your print,
+          we’ll do our best to make it right.</p>
+        
+      </div>
+      <div class="col-md-5">
+        <img
+          src="/media/about-why-choose-us.jpg"
+          alt=""
+          class="about-img img-fluid mx-auto"
+          id="about-last-img"
+        />
+      </div>
+    </div>
+  </div>
+  <div id="about-button-container">
+    <a class="shop-now-button btn btn-lg rounded-0 text-uppercase mb-5 py-3" href="{% url 'products' %}">Check Out Our Latest Deals!</a>
+  </div>
+</div>
+{% endblock %}
