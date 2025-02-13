@@ -1,0 +1,90 @@
+[
+    {
+        "pk": 1,
+        "model": "faq.Faq",
+        "fields": {
+            "question": "What is the return policy?",
+            "answer": "You can return items within 30 days of purchase for a full refund."
+        }
+    },
+    {
+        "pk": 2,
+        "model": "faq.Faq",
+        "fields": {
+            "question": "How can I track my order?",
+            "answer": "You will receive an email with a tracking link once your order has shipped."
+        }
+    },
+    {
+        "pk": 3,
+        "model": "faq.Faq",
+        "fields": {
+            "question": "Do you offer international shipping?",
+            "answer": "Yes, we ship to many countries worldwide. Shipping costs will be calculated at checkout."
+        }
+    },
+    {
+        "pk": 4,
+        "model": "faq.Faq",
+        "fields": {
+            "question": "What materials are the prints made from?",
+            "answer": "Our prints are produced on high-quality materials, such as archival-grade paper and canvas, ensuring vibrant colors and long-lasting durability."
+        }
+    },
+    {
+        "pk": 5,
+        "model": "faq.Faq",
+        "fields": {
+            "question": "Can I request a custom size or specific artwork?",
+            "answer": "If you're interested in a custom size or a specific piece not featured on our site, please contact our customer service team. We’ll do our best to accommodate your request."
+        }
+    },
+    {
+        "pk": 6,
+        "model": "faq.Faq",
+        "fields": {
+            "question": "What is your return policy?",
+            "answer": "We offer a 30-day return policy. If you're not satisfied with your print, simply contact us within 30 days of receiving it for a full refund or exchange. Prints must be in new, unused condition for returns to be processed."
+        }
+    },
+    {
+        "pk": 7,
+        "model": "faq.Faq",
+        "fields": {
+            "question": "How should I care for my art print?",
+            "answer": "To ensure the longevity of your print, we recommend keeping it out of direct sunlight and away from moisture. If you choose to frame your print, use UV-protective glass to help preserve the colors."
+        }
+    },
+    {
+        "pk": 8,
+        "model": "faq.Faq",
+        "fields": {
+            "question": "Can I order a digital download of the artwork?",
+            "answer": "Currently, we only offer physical prints of the artwork. We do not offer digital downloads at this time."
+        }
+    },
+    {
+        "pk": 9,
+        "model": "faq.Faq",
+        "fields": {
+            "question": "Is my payment information secure?",
+            "answer": "Yes, we use secure encryption technologies to protect your payment information during checkout. Your personal and payment details are safe with us."
+        }
+    },
+    {
+        "pk": 10,
+        "model": "faq.Faq",
+        "fields": {
+            "question": "What if my print arrives damaged?",
+            "answer": "If your print arrives damaged, please contact us immediately with a photo of the damage. We will arrange for a replacement or refund based on your preference."
+        }
+    },
+    {
+        "pk": 11,
+        "model": "faq.Faq",
+        "fields": {
+            "question": "Do you offer discounts or promotions?",
+            "answer": "From time to time, we offer special promotions and discounts. Be sure to sign up for our newsletter or follow us on social media to stay updated on current deals."
+        }
+    }
+]

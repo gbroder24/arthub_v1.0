@@ -1,0 +1,77 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block page_header %}
+    <div class="container header-container">
+        <div class="row">
+            <div class="col"></div>
+        </div>
+    </div>
+{% endblock %}
+
+{% block content %}
+<div class="overlay"></div>
+    <div class="row">
+        <div class="col text-center mt-3">
+            <h2 class="logo-font">FAQs</h2>
+                <hr class="w-75 mb-1">
+        </div>
+    </div>
+    <div class="default-page-container" id="faq-accordion-container">
+        <div id="faq-accordion">
+            <h1 id="faq-heading">Knowledge Base</h1>
+            <ul class="faq-ul">
+            <!-- Populates the FAQ accordion -->
+            {% for faq in faqs %}
+                <li class="faq-li">
+                    <input type="checkbox" checked class="faq-input" aria-label="FAQ Dropdown Checkbox">
+                    <i></i>
+                    <h2 class="faq-h2">{{ faq.question }}</h2>
+                    <p class="faq-text">{{ faq.answer }}</p>
+                </li>
+            {% endfor %}
+            </ul>
+        </div>
+    </div>
+    <div class="btt-button shadow-sm rounded-0 border border-black">
+        <a class="btt-link d-flex h-100">
+            <i class="fas fa-arrow-up text-black mx-auto my-auto"></i>
+        </a>	
+    </div>
+
+{% endblock %}
+
+{% block postloadjs %}
+    
+
+    <script type="text/javascript">
+        $('.btt-link').click(function(e) {
+            window.scrollTo(0,0)
+        })
+    </script>
+
+    <script>
+        // JS for sort selector
+        $('#sort-selector').change(function () {
+            let selector = $(this);
+            let currentUrl = new URL(window.location);
+
+            let selectedVal = selector.val();
+            if (selectedVal != "reset") {
+                var sort = selectedVal.split("_")[0];
+                var direction = selectedVal.split("_")[1];
+
+                currentUrl.searchParams.set("sort", sort);
+                currentUrl.searchParams.set("direction", direction);
+
+                window.location.replace(currentUrl);
+            } else {
+                currentUrl.searchParams.delete("sort");
+                currentUrl.searchParams.delete("direction");
+
+                window.location.replace(currentUrl);
+            }
+        });
+    </script>
+
+{% endblock %}
