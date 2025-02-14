@@ -512,6 +512,14 @@ input[name='q']::placeholder {
     }
 }
 
+/* -------- Contacts Page -------- */
+
+.detail-table-header {
+    color: #fff;
+    background-color: #343a40;
+    border-color: #454d55;
+}
+
 /* -------------------------------- Media Queries */
 
     /* Slightly larger container on xl screens */

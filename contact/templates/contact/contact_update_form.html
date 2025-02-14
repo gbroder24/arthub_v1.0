@@ -1,0 +1,133 @@
+{% extends "base.html" %}
+{% load static %}
+{% load crispy_forms_tags %}
+
+{% block page_header %}
+<div class="container header-container">
+    <div class="row">
+        <div class="col"></div>
+    </div>
+</div>
+{% endblock %}
+
+
+{% block content %}
+    <div class="overlay"></div>
+    <div class="container mt-5">
+        <div id="message-detail-container-outer">
+            <h1 class="text-center display-4 mb-4">Message Details</h1>
+            
+            <div id="message-detail-container" class="border p-4 rounded shadow-sm">
+                <small class="text-muted d-block mb-3">Message sent on: <strong>{{ object.date_created }}</strong></small>
+    
+                <!-- DETAILS TABLE -->
+                <table class="table table-bordered">
+                    <tbody>
+                        <tr>
+                            <th scope="row" class="detail-table-header">Email:</th>
+                            <td class="bg-light">{{ object.email }}</td>
+                        </tr>
+                        <tr>
+                            <th scope="row" class="detail-table-header">Name:</th>
+                            <td class="bg-light">{{ object.name }}</td>
+                        </tr>
+                        <tr>
+                            <th scope="row" class="detail-table-header">Subject:</th>
+                            <td class="bg-light">{{ object.subject }}</td>
+                        </tr>
+                        <tr>
+                            <th scope="row" class="detail-table-header">Message:</th>
+                            <td  class="bg-light"id="contact-message">{{ object.message }}</td>
+                        </tr>
+                        <tr>
+                            <th scope="row" class="detail-table-header">Responded:</th>
+                            <td class="bg-light">
+                                {% if object.responded %}
+                                    Yes
+                                {% else %}
+                                    No
+                                {% endif %}
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+    
+                <a href="{% url 'contact-list' %}" class="btn btn-black">Back to Contact List</a>
+    
+                <div class="text-center my-5" id="message-detail-button-container">
+                    {% if object.responded %}
+                        <!-- No action for responded messages -->
+                    {% else %}
+                        <!-- Displays the response form on click -->
+                        <button class="btn btn-warning" onclick="responseForm()">Respond To Message <i class="fa-solid fa-caret-down"></i></button>
+                    {% endif %}
+                    
+                    <!-- Deletes the message -->
+                    <a class="btn btn-danger" href="">Delete Message</a>
+                </div>
+            </div>
+        </div>
+    
+        <!-- Response form -->
+        <div id="formDiv" style="display: none;" class="mt-5">
+            <div class="custom-form-outer-container">
+                <div class="custom-form-inner-container border p-4 rounded shadow-sm">
+                    <form method="POST" id="response-form">
+                        {% csrf_token %}
+                        {{ form.as_p }}
+                        
+                        <div class="form-group">
+                            <label for="email">Email To:</label>
+                            <input type="email" id="email" class="form-control" placeholder="Email" readonly value="{{ object.email }}">
+                        </div>
+                        <div class="form-group">
+                            <label for="subject">Subject:</label>
+                            <input type="text" id="subject" class="form-control" placeholder="Subject" readonly value="{{ object.subject }}">
+                        </div>
+    
+                        <div class="form-group">
+                            <label for="email_body">Email Body:</label>
+                            <textarea id="email_body" name="email_body" class="form-control" rows="10" cols="50">
+                                Dear {{ object.name }},&#10;&#10;...&#10;&#10;&#10;Arthub&#10;https://arthub-16cd779294ab.herokuapp.com/
+                            </textarea>
+                        </div>
+    
+                        <button class="btn btn-success" id="responded-update-button" type="submit">Send Email</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+
+    <script>
+        // Shows/hides the form
+        function responseForm() {
+        var form = document.getElementById("formDiv");
+        if (form.style.display === "none") {
+            form.style.display = "block";
+        } else {
+            form.style.display = "none";
+        }
+
+        // Sets responded status to True
+        let checkBox = document.getElementById("id_responded")
+        checkBox.checked = true;
+        }
+    </script>
+
+<script>
+    function scrollToResponseForm() {
+        // Find the form container and scroll to it
+        const responseForm = document.getElementById('email_body');
+        responseForm.scrollIntoView({
+            behavior: 'smooth',  // This makes the scroll smooth
+            block: 'start'       // Align the top of the form to the top of the viewport
+        });
+
+        // Optionally, you can display the form after scrolling
+        document.getElementById('formDiv').style.display = 'block';
+    }
+</script>
+
+{% endblock %}
