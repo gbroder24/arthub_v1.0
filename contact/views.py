@@ -51,3 +51,20 @@ class ContactFormCreateView(CreateView):
 
 def ContactSuccess(request):
     return render(request, 'contact/contact_success.html')
+
+
+class ContactListView(LoginRequiredMixin, UserPassesTestMixin, ListView):
+    model = Contact
+    template_name = 'contact/contact_list.html'
+    context_object_name = 'contacts'
+    ordering = ['responded', 'pk']
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+
+        return context
+
+    def test_func(self):
+        if self.request.user.is_staff:
+            return True
+        return False
