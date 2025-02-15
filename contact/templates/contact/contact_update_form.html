@@ -69,7 +69,7 @@
         </div>
     
         <!-- Response form -->
-        <div id="formDiv" style="display: none;" class="mt-5">
+        <div id="formDiv"style="display: none;" class="mt-5">
             <div class="custom-form-outer-container">
                 <div class="custom-form-inner-container border p-4 rounded shadow-sm">
                     <form method="POST" id="response-form">
@@ -101,33 +101,32 @@
     
 
     <script>
-        // Shows/hides the form
+        // Show/hide the response form and scroll to it when the button is clicked
         function responseForm() {
-        var form = document.getElementById("formDiv");
-        if (form.style.display === "none") {
-            form.style.display = "block";
-        } else {
-            form.style.display = "none";
+            var form = document.getElementById("formDiv");
+            if (form.style.display === "none") {
+                form.style.display = "block";
+                scrollToResponseForm();  // Scroll to the form after it is shown
+            } else {
+                form.style.display = "none";
+            }
+        
+            // Set responded status to True (optional, depends on your setup)
+            let checkBox = document.getElementById("id_responded")
+            if (checkBox) {
+                checkBox.checked = true;
+            }
         }
-
-        // Sets responded status to True
-        let checkBox = document.getElementById("id_responded")
-        checkBox.checked = true;
+        
+        // Smooth scroll to the response form
+        function scrollToResponseForm() {
+            const formDiv = document.getElementById('formDiv'); // This should be the correct element ID
+            formDiv.scrollIntoView({
+                behavior: 'smooth',  // This makes the scroll smooth
+                block: 'start'       // Align the top of the form to the top of the viewport
+            });
         }
     </script>
-
-<script>
-    function scrollToResponseForm() {
-        // Find the form container and scroll to it
-        const responseForm = document.getElementById('email_body');
-        responseForm.scrollIntoView({
-            behavior: 'smooth',  // This makes the scroll smooth
-            block: 'start'       // Align the top of the form to the top of the viewport
-        });
-
-        // Optionally, you can display the form after scrolling
-        document.getElementById('formDiv').style.display = 'block';
-    }
-</script>
+    
 
 {% endblock %}
