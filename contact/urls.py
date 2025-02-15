@@ -11,4 +11,9 @@ urlpatterns = [
         views.ContactUpdateView.as_view(),
         name='contact-update'
     ),
+    path(
+        '<int:pk>/delete',
+        views.ContactDeleteView.as_view(),
+        name='contact-delete'
+    ),
 ]

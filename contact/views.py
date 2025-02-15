@@ -106,3 +106,29 @@ class ContactUpdateView(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
 
     def get_success_url(self):
         return reverse('contact-update', kwargs={'pk': self.object.pk})
+
+
+class ContactDeleteView(
+    LoginRequiredMixin,
+    UserPassesTestMixin,
+    SuccessMessageMixin,
+    DeleteView
+):
+    model = Contact
+    success_url = reverse_lazy('contact-list')
+    success_message = (
+        'Message Deleted.'
+    )
+
+    # Checks if user is staff
+    def test_func(self):
+        contact = self.get_object()
+        if self.request.user.is_staff:
+            return True
+        return False
+
+    def delete(self, request, *args, **kwargs):
+        messages.success(self.request, self.success_message)
+        return super(
+            ContactDeleteView, self
+        ).delete(request, *args, **kwargs)
