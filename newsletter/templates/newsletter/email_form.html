@@ -14,18 +14,24 @@
 {% block content %}
     <!-- Newsletter Subscription Page -->
     <div class="overlay"></div>
-    <div class="default-page-container">
-        <div class="content-section custom-form-outer-container">
+    <div class="default-page-container container py-5"> 
+        <div class="content-section custom-form-outer-container mx-auto p-4 w-50">
             <form method="POST" enctype="multipart/form-data">
                 {% csrf_token %}
                 <fieldset class="form-group custom-form-inner-container">
-                    <h1 class="text-center default-page-header">Subscribe</h1>
+                    <h1 class="text-center mb-4 default-page-header">Subscribe</h1>
+    
+                    <!-- Render the form fields with crispy-forms for Bootstrap styling -->
                     {{ form|crispy }}
+    
                 </fieldset>
-                <div class="form-group my-2 custom-form-button-container">
-                    <button class="btn black-button" type="submit">Subscribe</button>
+    
+                <div class="form-group my-4 custom-form-button-container">
+                    <!-- Enhanced Submit Button with Bootstrap styles -->
+                    <button class="btn btn-black" type="submit">Subscribe</button>
                 </div>
             </form>
         </div>
     </div>
+    
 {% endblock %}
