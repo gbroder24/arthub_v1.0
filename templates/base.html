@@ -156,6 +156,69 @@
     {% block content %}
     {% endblock %}
 
+    <!-- Footer -->
+    <footer class="container-fluid py-5 text-white" id="footer-container">
+
+        <!-- Footer Sections (Centered and Evenly Spaced) -->
+        <div class="row">
+      
+          <!-- Site Pages Section -->
+          <div class="col-12 col-md-4 mb-3 pl-5">
+            <h5 class="text-uppercase mb-3">Site Pages</h5>
+            <ul class="nav flex-column">
+              <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-light">Home</a></li>
+              <li class="nav-item mb-2"><a href="{% url 'products' %}" class="nav-link p-0 text-light">Artists</a></li>
+              <li class="nav-item mb-2"><a href="{% url 'about' %}" class="nav-link p-0 text-light">About</a></li>
+              <li class="nav-item mb-2"><a href="{% url 'faq' %}" class="nav-link p-0 text-light">FAQs</a></li>
+              <li class="nav-item mb-2"><a href="{% url 'contact-form' %}" class="nav-link p-0 text-light">Contact</a></li>
+            </ul>
+          </div>
+      
+          <!-- My Account Section -->
+          <div class="col-12 col-md-4 mb-3 pl-5">
+            {% if user.is_authenticated %}
+              <h5 class="text-uppercase mb-3">My Account</h5>
+              <ul class="nav flex-column">
+                <li class="nav-item mb-2"><a href="{% url 'profile' %}" class="nav-link p-0 text-light">My Profile</a></li>
+                <li class="nav-item mb-2"><a href="{% url 'account_logout' %}" class="nav-link p-0 text-light">Logout</a></li>
+              </ul>
+            {% else %}
+              <h5 class="text-uppercase mb-3">Account</h5>
+              <ul class="nav flex-column">
+                <li class="nav-item mb-2"><a href="{% url 'account_signup' %}" class="nav-link p-0 text-light">Register</a></li>
+                <li class="nav-item mb-2"><a href="{% url 'account_login' %}" class="nav-link p-0 text-light">Login</a></li>
+              </ul>
+            {% endif %}
+          </div>
+      
+          <!-- Newsletter Subscription Section -->
+          <div class="col-12 col-md-4 mb-3 pl-5">
+            <h5 class="text-uppercase mb-3">Subscribe to our newsletter</h5>
+            <p>Get exciting news and exclusive deals delivered to your inbox!</p>
+            <form>
+              <div class="d-flex justify-content-center justify-content-sm-start">
+                <a class="btn btn-primary text-white" id="mailing-list-button" href="{% url 'mailing-list-subscribe' %}">Subscribe Now</a>
+              </div>
+            </form>
+          </div>
+        </div>
+      
+        <!-- Footer Credits and Social Links -->
+        <div class="d-flex flex-column flex-sm-row justify-content-between py-4 my-4 border-top">
+          <p class="footer-credit-text">&copy; 2025 Arthub, All rights reserved.</p>
+          <ul class="list-unstyled d-flex">
+            <li>
+              <p class="footer-credit-text">Site designed & developed by Gary Broderick</p>
+            </li>
+            <li class="ms-3"><a class="link-body-emphasis footer-credit-icon" rel="author" href="https://github.com/garybroderick" target="_blank"><i class="fa-brands fa-github"></i></a></li>
+            <li class="ms-3"><a class="link-body-emphasis footer-credit-icon" rel="author" href="https://www.linkedin.com/in/garybroderick" target="_blank"><i class="fa-brands fa-linkedin"></i></a></li>
+          </ul>
+        </div>
+      
+      </footer>
+      
+      
+
     {% block postloadjs %}
         <script type="text/javascript">
             $('.toast').toast('show');

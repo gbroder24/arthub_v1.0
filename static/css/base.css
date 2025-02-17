@@ -520,6 +520,13 @@ input[name='q']::placeholder {
     border-color: #454d55;
 }
 
+/* -------- Footer -------- */
+
+#footer-container {
+    background-color: rgba(0, 0, 0, 0.5); /* 50% opacity black background */
+}
+
+
 /* -------------------------------- Media Queries */
 
     /* Slightly larger container on xl screens */

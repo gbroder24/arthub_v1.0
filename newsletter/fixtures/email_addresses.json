@@ -1,0 +1,1 @@
+[{"pk": 1, "model": "newsletter.email", "fields": { "email": "gbdev25@email.com" }}, {"pk": 2, "model": "newsletter.email", "fields": { "email": "test@email.com" }}]
