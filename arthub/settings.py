@@ -36,7 +36,7 @@ ALLOWED_HOSTS = [
     # listen for stripe webhooks
     'localhost',
     # heroku application
-    'django-pp5-arthub-37c0b88f7fd7.herokuapp.com/',
+    'django-pp5-arthub-37c0b88f7fd7.herokuapp.com',
 ]
 
 
