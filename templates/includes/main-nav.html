@@ -1,31 +1,31 @@
-<div class="collapse navbar-collapse" id="main-nav">
-    <ul class="navbar-nav w-auto mx-auto">
-        <li class="nav-item dropdown">
-            <a class="logo-font font-weight-bold nav-link text-black mr-5" href="#" id="prints-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                Prints
-            </a>
-            <div class="dropdown-menu border-0" aria-labelledby="prints-link">
-                <a href="{% url 'products' %}" class="dropdown-item">All Artists</a>
-                <a href="{% url 'products' %}?category=vincent_van_gogh" class="dropdown-item">Vincent Van Gogh</a>
-                <a href="{% url 'products' %}?category=paul_cézanne" class="dropdown-item ">Paul Cézanne</a>
-                <a href="{% url 'products' %}?category=georges_seurat" class="dropdown-item ">Georges Seurat</a>
-                <a href="{% url 'products' %}?category=paul_gauguin" class="dropdown-item">Paul Gauguin</a>
-                <a href="{% url 'products' %}?category=henri_toulouse_lautrec" class="dropdown-item">Henri Toulouse-Lautrec</a>
-            </div>
-        </li>
+    <div class="collapse navbar-collapse" id="main-nav">
+        <ul class="navbar-nav w-auto mx-auto">
+            <li class="nav-item dropdown">
+                <a class="logo-font font-weight-bold nav-link mr-5 text-white" href="#" id="prints-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Prints
+                </a>
+                <div class="dropdown-menu border-0" aria-labelledby="prints-link">
+                    <a href="{% url 'products' %}" class="dropdown-item">All Artists</a>
+                    <a href="{% url 'products' %}?category=vincent_van_gogh" class="dropdown-item">Vincent Van Gogh</a>
+                    <a href="{% url 'products' %}?category=paul_cézanne" class="dropdown-item ">Paul Cézanne</a>
+                    <a href="{% url 'products' %}?category=georges_seurat" class="dropdown-item ">Georges Seurat</a>
+                    <a href="{% url 'products' %}?category=paul_gauguin" class="dropdown-item">Paul Gauguin</a>
+                    <a href="{% url 'products' %}?category=henri_toulouse_lautrec" class="dropdown-item">Henri Toulouse-Lautrec</a>
+                </div>
+            </li>
 
-        <li class="nav-item dropdown">
-            <a class="logo-font font-weight-bold nav-link text-black mr-5" href="#" id="about-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                About
-            </a>
-            <div class="dropdown-menu border-0" aria-labelledby="about-link">
-                <a href="{% url 'about' %}" class="dropdown-item">About Us</a>
-                <a href="{% url 'faq' %}" class="dropdown-item">FAQ</a>
-            </div>
-        </li>
+            <li class="nav-item dropdown">
+                <a class="logo-font font-weight-bold nav-link mr-5 text-white" href="#" id="about-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    About
+                </a>
+                <div class="dropdown-menu border-0" aria-labelledby="about-link">
+                    <a href="{% url 'about' %}" class="dropdown-item">About Us</a>
+                    <a href="{% url 'faq' %}" class="dropdown-item">FAQ</a>
+                </div>
+            </li>
 
-        <li class="nav-item dropdown">
-            <a href="{% url 'contact-form' %}" class="logo-font font-weight-bold nav-link text-black mr-5">Contact</a>
-        </li>
-    </ul>
-</div>
+            <li class="nav-item dropdown">
+                <a href="{% url 'contact-form' %}" class="logo-font font-weight-bold nav-link mr-5 text-white">Contact</a>
+            </li>
+        </ul>
+    </div>

@@ -38,18 +38,19 @@
 
     <title>Arthub {% block extra_title %}{% endblock %}</title>
   </head>
-  <body>
+  <body class="h100">
     <header class="container-fluid fixed-top">
-      <div id="topnav" class="row bg-white pt-lg-2">
+      <div id="topnav" class="row pt-lg-2">
           <!-- Logo -->
-          <div class="col-12 col-lg-2 col-xl-3 my-auto py-1 py-lg-0 text-center text-lg-left">
-              <a href="{% url 'home' %}" class="nav-link main-logo-link">
-                  <h2 class="logo-font text-black my-0"><strong>Arthub</strong></h2>
-              </a>
-          </div>
-    
+<div class="col-12 col-lg-2 col-xl-3 my-auto py-1 py-lg-0 d-flex justify-content-center justify-content-lg-start text-center text-lg-left">
+  <a href="{% url 'home' %}" class="logo-font nav-link main-logo-link">
+      <h2 class="text-white my-0 nav-link"><strong class="arthub">Arthub</strong></h2>
+  </a>
+</div>
+
+  
           <!-- Search Bar -->
-          <div class="col-12 col-lg-3 my-auto py-1 py-lg-0 hide-on-mobile">
+          <div class="col-12 col-lg-3 my-auto py-1 py-lg-0 d-none d-lg-block">
               <form method="GET" action="{% url 'products' %}">
                   <div class="input-group w-100">
                       <input class="form-control border border-black rounded-0" type="text" name="q" placeholder="Search our site">
@@ -63,25 +64,23 @@
                   </div>
               </form>
           </div>
-
+  
           <!-- Navigation Section moved to this row -->
-          
-            <div class="col-12 col-lg-4 col-xl-3 my-auto py-1 py-lg-0">
-              <nav class="navbar navbar-expand-lg navbar-light w-100">
+          <div class="col-12 col-lg-4 col-xl-3 my-auto py-1 py-lg-0">
+              <nav class="navbar navbar-expand-lg w-100">
                   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#main-nav" aria-controls="main-nav" aria-expanded="false" aria-label="Toggle navigation">
-                      <span class="navbar-toggler-icon"></span>
+                      <span class="navbar-toggler-icon" id="hamburger"></span>
                   </button>
                   {% include 'includes/mobile-top-header.html' %}
                   {% include 'includes/main-nav.html' %}
               </nav>
-            </div>
-          
-    
+          </div>
+  
           <!-- Account and Shopping Bag (Right Side) -->
-          <div class="col-12 col-lg-3 my-auto py-1 py-lg-0 hide-on-mobile">
+          <div class="col-12 col-lg-3 my-auto py-1 py-lg-0 d-none d-lg-block">
               <ul class="list-inline list-unstyled text-center text-lg-right my-0">
                   <li class="list-inline-item dropdown">
-                      <a class="text-black nav-link" href="#" id="user-options" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                      <a class="text-white nav-link" href="#" id="user-options" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                           <div class="text-center">
                               <div><i class="fas fa-user fa-lg"></i></div>
                               <p class="my-0">My Account</p>
@@ -102,7 +101,7 @@
                       </div>
                   </li>
                   <li class="list-inline-item">
-                      <a class="{% if grand_total %}text-info font-weight-bold{% else %}text-black{% endif %} nav-link" href="{% url 'view_bag' %}">
+                      <a class="{% if grand_total %}text-white font-weight-bold{% else %}text-white{% endif %} nav-link" href="{% url 'view_bag' %}">
                           <div class="text-center">
                               <div><i class="fas fa-shopping-bag fa-lg"></i></div>
                               <p class="my-0">
@@ -117,21 +116,16 @@
                   </li>
               </ul>
           </div>
-    
-
+  
       </div>
-    
+  
       <!-- Delivery Banner -->
       <div id="delivery-banner" class="row text-center">
           <div class="col bg-black text-white">
-              <h4 class="logo-font my-1">10% Off Prints and Free Delivery On Orders Over €{{ free_delivery_threshold }}!</h4>                
-          </div>            
+              <h4 class="logo-font my-1">10% Off Prints and Free Delivery On Orders Over €{{ free_delivery_threshold }}!</h4>
+          </div>
       </div>
-    </header>
-    
-    
-  
-
+  </header>
     {% if messages %}
         <div class="message-container">
             {% for message in messages %}
@@ -157,7 +151,7 @@
     {% endblock %}
 
     <!-- Footer -->
-    <footer class="container-fluid px-0 py-5 mt-5 text-white" id="footer-container">
+    <footer class="container-fluid px-0 pt-1 mt-5 text-white" id="footer-container">
 
         <!-- Footer Sections (Centered and Evenly Spaced) -->
         <div class="row">
@@ -197,21 +191,20 @@
             <p>Get exciting news and exclusive deals delivered to your inbox!</p>
             <form>
               <div class="d-flex justify-content-center justify-content-sm-start">
-                <a class="btn btn-primary text-white" id="mailing-list-button" href="{% url 'mailing-list-subscribe' %}">Subscribe Now</a>
+                <a class="subscribe-button btn btn-lg btn-black rounded-0 text-uppercase" id="mailing-list-button" href="{% url 'mailing-list-subscribe' %}">Subscribe Now</a>
               </div>
             </form>
           </div>
         </div>
       
         <!-- Footer Credits and Social Links -->
-        <div class="d-flex flex-column flex-sm-row justify-content-between py-4 my-4 border-top">
+        <div class="d-flex flex-column flex-sm-row justify-content-between border-top px-5 pt-3">
           <p class="footer-credit-text">&copy; 2025 Arthub, All rights reserved.</p>
           <ul class="list-unstyled d-flex">
             <li>
               <p class="footer-credit-text">Site designed & developed by Gary Broderick</p>
             </li>
-            <li class="ms-3"><a class="link-body-emphasis footer-credit-icon" rel="author" href="https://github.com/garybroderick" target="_blank"><i class="fa-brands fa-github"></i></a></li>
-            <li class="ms-3"><a class="link-body-emphasis footer-credit-icon" rel="author" href="https://www.linkedin.com/in/garybroderick" target="_blank"><i class="fa-brands fa-linkedin"></i></a></li>
+            <li class="ml-3"><a class="link-body-emphasis" rel="author" href="https://github.com/garybroderick" target="_blank"><i class="fa-brands fa-github footer-credit-icon"></i></a></li>
           </ul>
         </div>
       

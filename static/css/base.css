@@ -19,12 +19,41 @@ body {
     width: 1.5rem;
 }
 
+/* Hover effect for main navbar links */
+.arthub:hover,
+#prints-link:hover,
+#about-link:hover,
+.nav-item .nav-link:hover,
+.list-inline-item .nav-link:hover {
+    color: gold !important;
+    transition: color 0.3s ease-in-out;
+}
+
+/* Hover effect for dropdown items */
+.navbar-nav .dropdown-menu .dropdown-item:hover {
+    text-decoration: underline;
+}
+
+#hamburger {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='white' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+    color: white;
+}
+
+.dropdown-item {
+    color: #000000;
+}
+
+
 .logo-font {
     text-transform: uppercase;
 }
 
 .main-logo-link {
     width: fit-content;
+}
+
+#topnav { 
+    background-color: rgba(0, 0, 0, 0.5);
 }
 
 .shop-now-button {
@@ -51,15 +80,31 @@ body {
     color: white !important;
 }
 
-
 .shop-now-button:hover,
 .shop-now-button:active,
 .shop-now-button:focus,
 .btn-black:hover,
 .btn-black:active,
-.btn-black:focus {
-    background: #222;
-    color: white;
+.btn-black:focus,
+.subscribe-button:hover,
+.subscribe-button:active,
+.subscribe-button:focus {
+    background: gold;
+    color: #000000;
+    transition: color 0.3s ease-in-out;
+}
+
+.footer-credit-icon {
+    color: #fff;
+}
+
+.footer-credit-icon:hover,
+.footer-credit-icon:active,
+.footer-credit-icon:focus {
+    background: #fff;
+    color: #000000;
+    transition: color 0.3s ease-in-out;
+    border-radius: 50%;
 }
 
 .text-black {
@@ -231,6 +276,11 @@ input[name='q']::placeholder {
 
 .allauth-form-inner-content a {
 	color: #17a2b8; /* text-info */
+}
+
+
+#index-container {
+    color: #F1E8D6;
 }
 
 /* -------- ABOUT PAGE -------- */
@@ -541,6 +591,10 @@ input[name='q']::placeholder {
 
         .container {
         max-width: 80%;
+        }
+
+        .footer-credit-icon {
+            font-size: 1.5rem;
         }
     }
   
