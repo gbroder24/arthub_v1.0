@@ -150,6 +150,13 @@
     {% block content %}
     {% endblock %}
 
+    <!-- Scroll to Top Button -->
+    <div class="shadow-sm rounded-0 border-0">
+        <a>
+            <i class="fas fa-arrow-up text-dark d-flex justify-content-center  back-to-top"></i>
+        </a>  
+    </div>
+
     <!-- Footer -->
     <footer class="container-fluid px-0 pt-1 mt-5 text-white" id="footer-container">
 
@@ -198,7 +205,7 @@
         </div>
       
         <!-- Footer Credits and Social Links -->
-        <div class="d-flex flex-column flex-sm-row justify-content-between border-top px-5 pt-3">
+        <div class="d-flex flex-column flex-sm-row justify-content-between px-5 pt-3 footer-credit">
           <p class="footer-credit-text">&copy; 2025 Arthub, All rights reserved.</p>
           <ul class="list-unstyled d-flex">
             <li>
@@ -215,6 +222,12 @@
     {% block postloadjs %}
         <script type="text/javascript">
             $('.toast').toast('show');
+        </script>
+
+        <script type="text/javascript">
+            $('.back-to-top').click(function(e) {
+                window.scrollTo(0,0)
+            })
         </script>
 
     {% endblock %}

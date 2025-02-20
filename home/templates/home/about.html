@@ -106,22 +106,11 @@
   <div id="about-button-container">
     <a class="shop-now-button btn btn-lg rounded-0 text-uppercase mb-5 py-3" href="{% url 'products' %}">Check Out Our Latest Deals!</a>
   </div>
-  <div class="btt-button shadow-sm rounded-0 border border-black">
-    <a class="btt-link d-flex h-100">
-        <i class="fas fa-arrow-up text-black mx-auto my-auto"></i>
-    </a>	
-</div>
 </div>
 {% endblock %}
 
 {% block postloadjs %}
   {{ block.super }}
-
-    <script type="text/javascript">
-		$('.btt-link').click(function(e) {
-			window.scrollTo(0,0)
-		})
-	</script>
 
     <script>
         // JS for sort selector
