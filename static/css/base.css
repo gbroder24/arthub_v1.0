@@ -71,6 +71,7 @@ body {
 .btn-black {
     background: black;
     color: white;
+    border: 2px solid #D4AF37
 }
 
 .btn-outline-black {
@@ -335,6 +336,7 @@ input[name='q']::placeholder {
     bottom: 100px;
     background-color: #fff;
     border-radius: 50%;
+    border: 1px solid gold;
     width: 40px; 
     height: 40px; 
     display: flex;
@@ -478,7 +480,7 @@ input[name='q']::placeholder {
     display: inline-block;
     position: relative;
     margin: 80px 90px 205px 90px;
-    box-shadow: 2px 2px 2px 2px #000;
+    border: 2px solid #000000;
     background-color: #fff;
     color: #000;
     max-width: 900px;
@@ -508,7 +510,7 @@ input[name='q']::placeholder {
 }
 
 .faq-text {
-    color: rgba(75, 75, 75, 0.9);
+    color: #000000;
     font-size: 17px;
     line-height: 26px;
     letter-spacing: 1px;
@@ -535,7 +537,6 @@ input[name='q']::placeholder {
     padding-bottom: 4px;
     padding-top: 18px;
     padding-right: 20px;
-    border-top: 2px solid #cfcfcf;
 }
 
 .faq-ul li:nth-of-type(1) {
@@ -741,5 +742,23 @@ input[name='q']::placeholder {
 
         body {
             height: calc(100vh - 300px);
+        }
+    }
+
+    @media (min-width: 320px) {
+        .header-container {
+            padding-top: 250px;
+        }
+    }
+
+    @media (min-width: 1440px) {
+        .scroll-to-top {
+            height: 100px;
+        }
+    }
+
+    @media (min-width: 768px) {
+        .newsletter {
+            padding-left: 0;
         }
     }
