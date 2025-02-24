@@ -295,7 +295,7 @@ input[name='q']::placeholder {
 
 .allauth-form-inner-content p {
     margin-top: 1.5rem; /* mt-4 */
-    color: #6c757d; /* text-secondary */
+    color: #000000; /* text-secondary */
 }
 
 .allauth-form-inner-content input {
@@ -324,11 +324,10 @@ input[name='q']::placeholder {
     -ms-user-select: none;
     user-select: none;
     background-color: #000;
-    border: 1px solid #000;
+    border: 2px solid #D4AF37;
     padding: .375rem .75rem;
     font-size: 1rem;
     line-height: 1.5;
-    border-radius: 0;
 
     /* standard bootstrap btn transitions */
     transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
@@ -336,18 +335,40 @@ input[name='q']::placeholder {
 
 .allauth-form-inner-content button:hover,
 .allauth-form-inner-content input[type='submit']:hover {	
-	color: #fff;
-    background-color: #222;
-    border-color: #222;
+	color: #000;
+    background-color: gold;
+    
 }
 
 .allauth-form-inner-content a {
-	color: #17a2b8; /* text-info */
+	color: #000; /* text-info */
 }
 
 
 #index-container {
     color: #F1E8D6;
+}
+
+.login,
+.password_reset,
+.signup,
+.password_change,
+.password_set {
+    max-width: 500px; /* Limit the form width on larger screens */
+    margin: 0 auto;   /* Center the form horizontally */
+    padding: 20px;
+  }
+
+  /* Responsive styles for mobile */
+@media (max-width: 768px) {
+    .login,
+    .password_reset,
+    .signup,
+    .password_change,
+    .password_set {
+      width: 90%; /* Reduce form width on smaller screens */
+      padding: 15px;
+    }
 }
 
 /* -------- PRODUCTS PAGE -------- */
@@ -788,7 +809,7 @@ input[name='q']::placeholder {
             background: url('/media/homepage_background_cropped.webp') no-repeat center center fixed;
             background-size: cover;
             height: calc(100vh - 164px);
-            color: #555;
+            color: #000;
             font-family: 'Playfair Display', serif;
         }
 

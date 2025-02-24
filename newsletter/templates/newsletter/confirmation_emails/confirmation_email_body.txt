@@ -9,4 +9,4 @@ Keep an eye out for exciting news from Arthub, and don't forget to check out our
 Arthub
 
 If you wish to unsubscribe from these emails, click the link below (you may need to log in to your account)
-https://arthub-16cd779294ab.herokuapp.com/newsletter/unsubscribe
+https://django-pp5-arthub-37c0b88f7fd7.herokuapp.com/newsletter/unsubscribe
