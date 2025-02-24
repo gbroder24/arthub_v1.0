@@ -15,12 +15,12 @@
     <!-- Newsletter Subscription Page -->
     <div class="overlay"></div>
     <div class="default-page-container container py-5"> 
-        <div class="content-section custom-form-outer-container mx-auto p-4 w-50">
+        <div class="content-section custom-form-outer-container text-center mx-auto p-4 w-50">
             <form method="POST" enctype="multipart/form-data">
                 {% csrf_token %}
                 <fieldset class="form-group custom-form-inner-container">
-                    <h1 class="text-center mb-4 default-page-header">Subscribe</h1>
-                    <hr class="w-75 py-2">
+                    <h1 class="logo-font display-4 heading">Subscribe</h1>
+                    <hr class="w-75 horizontal-rule">
     
                     <!-- Render the form fields with crispy-forms for Bootstrap styling -->
                     {{ form|crispy }}

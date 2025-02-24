@@ -184,29 +184,78 @@ input[name='q']::placeholder {
 
 .message-container {
     position: fixed;
-    top: 72px;
+    top: 120px;
     right: 15px;
     z-index: 99999999999;
 }
 
+/* Modern toast design */
 .custom-toast {
-    overflow: visible;
+    overflow: hidden;
+    background: rgba(0, 0, 0, 0.1); /* Semi-transparent black background */
+    backdrop-filter: blur(30px); /* Blur background */
+    border-radius: 15px; /* Rounded corners */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
 }
 
 .toast-capper {
     height: 2px;
 }
 
-/* from CSS-tricks.com: https://css-tricks.com/snippets/css/css-triangle/ */
+/* Arrow design */
 .arrow-up {
     width: 0; 
     height: 0; 
     border-left: 10px solid transparent;
     border-right: 10px solid transparent; 
-    border-bottom: 10px solid black;
+    border-bottom: 10px solid rgba(40, 167, 69, 0.8); /* Transparent green */
     position: absolute;
     top: -10px;
     right: 106px;
+}
+
+/* Header Styling */
+.custom-toast-header {
+    background: rgba(0, 0, 0, 0.1); /* Semi-transparent black background */
+    font-weight: bold;
+}
+
+/* Body Styling */
+.custom-toast-body {
+    background: rgba(0, 0, 0, 0.1); /* Light translucent background */
+    padding: 15px;
+    font-size: 0.95rem;
+}
+
+/* Bag items wrapper */
+.bag-notification-wrapper {
+    height: 100px;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+/* Button Styling */
+.btn-dark {
+    background-color: #333; /* Dark button */
+    border-color: #333;
+}
+
+/* Close button */
+.close {
+    color: white;
+    opacity: 0.8;
+    transition: opacity 0.3s ease;
+}
+
+.close:hover {
+    opacity: 1;
+}
+
+/* Responsive tweaks */
+@media (max-width: 576px) {
+    .custom-toast-body {
+        font-size: 0.85rem;
+    }
 }
 
 /* Convenience classes - colors copied from Bootstrap */
@@ -218,8 +267,8 @@ input[name='q']::placeholder {
     border-bottom-color: #6c757d !important;
 }
 
-.arrow-success {
-    border-bottom-color: #28a745 !important;
+.text-success {
+    color: #28a745 !important;
 }
 
 .arrow-danger {
@@ -240,12 +289,6 @@ input[name='q']::placeholder {
 
 .arrow-dark {
     border-bottom-color: #343a40 !important;
-}
-
-.bag-notification-wrapper {
-    height: 100px;
-    overflow-x: hidden;
-    overflow-y: auto;
 }
 
 /* Allauth form formatting */
