@@ -18,60 +18,65 @@
 <div class="container-fluid p-0">
     <div class="row">
         <div class="col">
-            <h2 class="logo-font mb-4  text-center">My Profile</h2>
-            <hr class="w-50 mb-1">
+            <h2 class="logo-font mb-4 display-4 display-sm-3 display-md-2 heading text-center">My Profile</h2>
+            <hr class="w-75 mb-4 mx-auto horizontal-rule">
         </div>
     </div>
-    <div class="row p-5">
-        <div class="col-12 col-lg-6">
-            <p class="text-muted">Default Delivery Information</p>
-            <form class="mt-3" action="{% url 'profile' %}" method="POST" id="profile-update-form">
-                {% csrf_token %}
-                {{ form|crispy }}
-                <button class="btn btn-black rounded-0 text-uppercase float-right">Update Information</button>
-            </form>
-        </div>
-        <div class="col-12 col-lg-6">
-            <p class="text-muted">Order History</p>
-            <div class="order-history table-responsive">
-                <table class="table table-sm table-borderless">
-                    <thead>
-                        <tr>
-                            <th>Order Number</th>
-                            <th>Date</th>
-                            <th>Items</th>
-                            <th>Order Total</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        {% for order in orders %}
+    <div class="container p-5">
+        <div class="row">
+            <div class="col-12 col-md-6 mb-4 mb-md-0">
+                <p class="text-black">Default Delivery Information</p>
+                <form class="mt-3" action="{% url 'profile' %}" method="POST" id="profile-update-form">
+                    {% csrf_token %}
+                    <div class="card shadow-sm p-4">
+                        {{ form|crispy }}
+                        <button class="btn btn-black rounded-0 text-uppercase float-md-right w-100 w-md-auto">Update Information</button>
+                    </div>
+                </form>
+            </div>
+            <div class="col-12 col-md-6 my-order-number">
+                <p class="text-black">Order History</p>
+                <div class="order-history table-responsive">
+                    <table class="table table-sm table-bordered table-striped table-hover">
+                        <thead>
                             <tr>
-                                <td>
-                                    <a href="{% url 'order_history' order.order_number %}"
-                                    title="{{ order.order_number }}">
-                                        {{ order.order_number|truncatechars:6 }}
-                                    </a>
-                                </td>
-                                <td>{{ order.date }}</td>
-                                <td>
-                                    <ul class="list-unstyled">
-                                        {% for item in order.lineitems.all %}
-                                            <li class="small">
-                                                {% if item.product.has_sizes %}
-                                                    Size {{ item.product.size|upper }}
-                                                {% endif %}{{ item.product.name }} x{{ item.quantity }}
-                                            </li>
-                                        {% endfor %}
-                                    </ul>
-                                </td>
-                                <td>${{ order.grand_total }}</td>
+                                <th>Order Number</th>
+                                <th>Date</th>
+                                <th>Items</th>
+                                <th>Order Total</th>
                             </tr>
-                        {% endfor %}
-                    </tbody>
-                </table>
+                        </thead>
+                        <tbody>
+                            {% for order in orders %}
+                                <tr>
+                                    <td>
+                                        <a class="category-text" href="{% url 'order_history' order.order_number %}"
+                                        title="{{ order.order_number }}">
+                                            {{ order.order_number|truncatechars:6 }}
+                                        </a>
+                                    </td>
+                                    <td>{{ order.date }}</td>
+                                    <td>
+                                        <ul class="list-unstyled">
+                                            {% for item in order.lineitems.all %}
+                                                <li class="small">
+                                                    {% if item.product.has_sizes %}
+                                                        Size {{ item.product.size|upper }}
+                                                    {% endif %}{{ item.product.name }} x{{ item.quantity }}
+                                                </li>
+                                            {% endfor %}
+                                        </ul>
+                                    </td>
+                                    <td>${{ order.grand_total }}</td>
+                                </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
             </div>
         </div>
     </div>
+    
 {% endblock %}
 
 {% block postloadjs %}

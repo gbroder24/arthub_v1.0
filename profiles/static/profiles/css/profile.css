@@ -14,3 +14,7 @@
 #id_default_country option:first-child {
     color: #aab7c4;
 }
+
+.my-order-number a {
+    color: black;
+}
