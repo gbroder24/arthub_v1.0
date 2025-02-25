@@ -15,42 +15,45 @@
     <div class="overlay"></div>
     <div class="container mt-5">
         <div id="message-detail-container-outer">
-            <h1 class="text-center display-4 mb-4">Message Details</h1>
+            <h1 class="logo-font display-4 heading text-center">Message Details</h1>
+            <hr class="w-75 mb-4 mx-auto horizontal-rule">
             
             <div id="message-detail-container" class="border p-4 rounded shadow-sm">
                 <small class="text-muted d-block mb-3">Message sent on: <strong>{{ object.date_created }}</strong></small>
     
                 <!-- DETAILS TABLE -->
-                <table class="table table-bordered">
-                    <tbody>
-                        <tr>
-                            <th scope="row" class="detail-table-header">Email:</th>
-                            <td class="bg-light">{{ object.email }}</td>
-                        </tr>
-                        <tr>
-                            <th scope="row" class="detail-table-header">Name:</th>
-                            <td class="bg-light">{{ object.name }}</td>
-                        </tr>
-                        <tr>
-                            <th scope="row" class="detail-table-header">Subject:</th>
-                            <td class="bg-light">{{ object.subject }}</td>
-                        </tr>
-                        <tr>
-                            <th scope="row" class="detail-table-header">Message:</th>
-                            <td  class="bg-light"id="contact-message">{{ object.message }}</td>
-                        </tr>
-                        <tr>
-                            <th scope="row" class="detail-table-header">Responded:</th>
-                            <td class="bg-light">
-                                {% if object.responded %}
-                                    Yes
-                                {% else %}
-                                    No
-                                {% endif %}
-                            </td>
-                        </tr>
-                    </tbody>
-                </table>
+                <div class="table-responsive">
+                    <table class="table table-bordered">
+                        <tbody>
+                            <tr>
+                                <th scope="row" class="detail-table-header">Email:</th>
+                                <td class="bg-light">{{ object.email }}</td>
+                            </tr>
+                            <tr>
+                                <th scope="row" class="detail-table-header">Name:</th>
+                                <td class="bg-light">{{ object.name }}</td>
+                            </tr>
+                            <tr>
+                                <th scope="row" class="detail-table-header">Subject:</th>
+                                <td class="bg-light">{{ object.subject }}</td>
+                            </tr>
+                            <tr>
+                                <th scope="row" class="detail-table-header">Message:</th>
+                                <td  class="bg-light"id="contact-message">{{ object.message }}</td>
+                            </tr>
+                            <tr>
+                                <th scope="row" class="detail-table-header">Responded:</th>
+                                <td class="bg-light">
+                                    {% if object.responded %}
+                                        Yes
+                                    {% else %}
+                                        No
+                                    {% endif %}
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
     
                 <a href="{% url 'contact-list' %}" class="btn btn-black">Back to Contact List</a>
     
@@ -59,11 +62,11 @@
                         <!-- No action for responded messages -->
                     {% else %}
                         <!-- Displays the response form on click -->
-                        <button class="btn btn-warning" onclick="responseForm()">Respond To Message <i class="fa-solid fa-caret-down"></i></button>
+                        <button class="btn btn-warning keep-shopping-bag" onclick="responseForm()">Respond To Message <i class="fa-solid fa-caret-down"></i></button>
                     {% endif %}
                     
                     <!-- Deletes the message -->
-                    <a class="btn btn-danger" href="{%  url 'contact-delete' object.id %}">Delete Message</a>
+                    <a class="btn btn-danger btn-delete" href="{%  url 'contact-delete' object.id %}">Delete Message</a>
                 </div>
             </div>
         </div>

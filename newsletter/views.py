@@ -1,17 +1,14 @@
 
 from django.shortcuts import render, redirect, reverse, get_object_or_404
-from django.urls import reverse_lazy
 from django.contrib import messages
 from django.template.loader import render_to_string
 from django.core.mail import send_mail
 from django.contrib.auth.decorators import login_required
-from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
-from django.contrib.messages.views import SuccessMessageMixin
 from django.core.exceptions import ObjectDoesNotExist
 
 from django.conf import settings
 
-from django.views.generic import CreateView, DeleteView
+from django.views.generic import CreateView
 
 from .models import Email
 

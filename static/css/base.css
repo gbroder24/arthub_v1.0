@@ -444,6 +444,7 @@ input[name='q']::placeholder {
 .btn-edit,
 .btn-delete {
     border-color: #D4AF37;
+    color: #000;
 }
 
 .btn-edit:hover,
@@ -911,6 +912,13 @@ input[name='q']::placeholder {
             font-size: 1.5rem;
         }
     }
+
+    @media (max-width: 375px) {
+        .keep-shopping-bag {
+            margin-bottom: 10px;
+        }
+    }
+
 
     /* pad the top a bit when navbar is collapsed on mobile */
     @media (max-width: 375px) {
