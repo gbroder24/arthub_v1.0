@@ -19,7 +19,7 @@ from django.contrib import admin
 from django.urls import path, include
 from django.conf import settings
 from django.conf.urls.static import static
-from .views import handler404
+from . import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -32,6 +32,8 @@ urlpatterns = [
     path('faq/', include('faq.urls')),
     path('contact/', include('contact.urls')),
     path('newsletter/', include('newsletter.urls')),
+    path('test-500/', views.trigger_500, name='test_500'),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
 handler404 = 'arthub.views.handler404'
+handler500 = 'arthub.views.handler500'

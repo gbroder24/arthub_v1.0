@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+    <div class="container header-container">
+        <div class="row">
+            <div class="col"></div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="row h-100 justify-content-center">
+            <div class="col-12 col-sm-10 col-md-8 col-lg-6 my-auto" id="error-container">
+                <h1 class="logo-font text-white text-center">
+                    Oops! Something went wrong.
+                    We're working on it and will be back shortly.
+                    Thanks for your patience!
+                </h1>
+                <div class="my-5 text-center">
+                    <h4>
+                        <a href="{% url 'products' %}" 
+                           class="shop-now-button btn btn-lg rounded-0 text-uppercase py-3">
+                            Return to shop
+                        </a>
+                    </h4>
+                </div>
+            </div>
+        </div>
+    </div>    
+{% endblock %}
