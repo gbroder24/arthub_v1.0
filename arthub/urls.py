@@ -32,8 +32,9 @@ urlpatterns = [
     path('faq/', include('faq.urls')),
     path('contact/', include('contact.urls')),
     path('newsletter/', include('newsletter.urls')),
-    path('test-500/', views.trigger_500, name='test_500'),
+    path('test-400/', views.trigger_400, name='test_400'),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
+handler400 = 'arthub.views.handler400'
 handler404 = 'arthub.views.handler404'
 handler500 = 'arthub.views.handler500'
