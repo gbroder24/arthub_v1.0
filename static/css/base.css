@@ -911,6 +911,10 @@ input[name='q']::placeholder {
         #index-container h3 {
             font-size: 1.5rem;
         }
+
+        #error-container h1 {
+            font-size: 2.0rem;
+        }
     }
 
     @media (max-width: 375px) {
@@ -938,6 +942,10 @@ input[name='q']::placeholder {
         #index-container h3 {
             font-size: 1.2rem;
         }
+
+        #error-container h1 {
+            font-size: 1.6rem;
+        }
     }
 
     @media (min-width: 320px) {
@@ -962,6 +970,11 @@ input[name='q']::placeholder {
 
         #index-container h3 {
             font-size: 0.9rem;
+        }
+
+        #error-container h1 {
+            font-size: 1.5rem;
+            margin: 40px 0px;
         }
 
         .keep-shopping-bag {
@@ -990,5 +1003,9 @@ input[name='q']::placeholder {
 
         .product-name {
             font-size: 2rem;
+        }
+
+        #error-container h1 {
+            font-size: 2.5rem;
         }
     }
