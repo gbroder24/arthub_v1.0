@@ -19,4 +19,4 @@ def handler500(request):
 
 def trigger_400(request):
     # This will intentionally raise an exception and trigger the 400 error handler
-    raise HttpResponseBadRequest("Intentional 400 error for testing purposes.")
+    return HttpResponseBadRequest("Intentional 400 error for testing purposes.")
