@@ -19,7 +19,17 @@ from django.contrib import admin
 from django.urls import path, include
 from django.conf import settings
 from django.conf.urls.static import static
-from . import views
+from .views import (
+    page_not_found,
+    server_error,
+    bad_request,
+    permission_denied
+)
+
+handler404 = 'config.views.page_not_found'
+handler403 = 'config.views.permission_denied'
+handler400 = 'config.views.bad_request'
+handler500 = 'config.views.server_error'
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -32,9 +42,15 @@ urlpatterns = [
     path('faq/', include('faq.urls')),
     path('contact/', include('contact.urls')),
     path('newsletter/', include('newsletter.urls')),
-    path('test-400/', views.trigger_400, name='test_400'),
-] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+    # Simulate 404 error (Page Not Found)
+    path('trigger-404/', page_not_found, name='trigger-404'),
 
-handler400 = 'arthub.views.handler400'
-handler404 = 'arthub.views.handler404'
-handler500 = 'arthub.views.handler500'
+    # Simulate 500 error (Server Error)
+    path('trigger-500/', server_error, name='trigger-500'),
+
+    # Simulate 400 error (Bad Request)
+    path('trigger-400/', bad_request, name='trigger-400'),
+
+    # Simulate 403 error (Forbidden)
+    path('trigger-403/', permission_denied, name='trigger-403'),
+] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
