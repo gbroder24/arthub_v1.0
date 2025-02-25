@@ -151,8 +151,8 @@
     {% endblock %}
 
     <!-- Scroll to Top Button -->
-    <div class="rounded-0 border-0 scroll-to-top hide-on-mobile">
-        <a>
+    <div class="rounded-0 border-0 scroll-to-top scroll-top hide-on-mobile">
+        <a id="scroll-link" href="#top">
             <i class="fas fa-arrow-up text-dark d-flex justify-content-center back-to-top"></i>
         </a>  
     </div>
@@ -225,9 +225,26 @@
         </script>
 
         <script type="text/javascript">
-            $('.back-to-top').click(function(e) {
-                window.scrollTo(0,0)
-            })
+             var backToTopBtn = document.getElementById("scroll-link");
+
+// When the user scrolls down 20px from the top of the document, show the button
+window.onscroll = function() {
+    if (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) {
+        backToTopBtn.style.display = "block";
+    } else {
+        backToTopBtn.style.display = "none";
+    }
+};
+
+// Smooth scroll to top functionality
+backToTopBtn.addEventListener('click', function(e) {
+        e.preventDefault(); // Prevent default anchor action
+        window.scrollTo({
+            top: 0,
+            left: 0,
+            behavior: 'smooth' // Smooth scroll behavior
+        });
+    });
         </script>
 
     {% endblock %}
