@@ -2,7 +2,7 @@ from django.shortcuts import render
 from django.http import HttpResponseBadRequest
 
 
-def handler400(request):
+def handler400(request, exception=None):
     """ Error Handler 400 - Bad Request """
     return render(request, "errors/400.html", status=400)
 
