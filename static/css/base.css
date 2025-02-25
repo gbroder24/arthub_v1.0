@@ -443,7 +443,6 @@ input[name='q']::placeholder {
 
 .btn-edit,
 .btn-delete {
-    color: #000;
     border-color: #D4AF37;
 }
 
