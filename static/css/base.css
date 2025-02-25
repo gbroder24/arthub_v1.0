@@ -463,7 +463,6 @@ input[name='q']::placeholder {
 /* -------- ABOUT PAGE -------- */
 
 #about-header {
-    padding-top: 83px;
     margin-top: 0;
 }
 
@@ -845,6 +844,53 @@ input[name='q']::placeholder {
         body {
             height: calc(100vh - 200px);
         }
+
+        .display-4.logo-font.text-black {
+            font-size: 2rem;
+        }
+    
+        .nav-link {
+            padding: 0.15rem;
+        }
+    
+        .nav-link i.fa-lg {
+            font-size: 1rem;
+        }
+    
+        .navbar-toggler {
+            padding: .6rem .6rem;
+            font-size: 1rem;
+        }
+    
+        #delivery-banner h4 {
+            font-size: .9rem;
+        }
+
+        .btn.btn-shop.rounded-0,
+        .btn.btn-black.rounded-0 {
+            padding: .375rem .375rem;
+        }
+
+        .btn.btn-shop.rounded-0,
+        .btn.btn-black.rounded-0,
+        .allauth-form-inner-content button {
+            padding: .375rem .375rem;
+            font-size: .75rem;
+        }
+
+        .increment-qty,
+        .decrement-qty {
+            padding: .25rem .5rem !important;
+        }
+
+        .toast {
+            position: relative;
+            top: auto;
+            right: 10px;
+
+            width: 300px;
+            height: auto;
+        }
     }
 
     /* pad the top a bit when navbar is collapsed on mobile */
@@ -888,7 +934,15 @@ input[name='q']::placeholder {
 
     @media (min-width: 320px) {
         .header-container {
-            padding-top: 250px;
+            padding-top: 200px;
+        }
+
+        .heading {
+            font-size: 1.5rem;
+        }
+
+        .product-name {
+            font-size: 1.5rem;
         }
     }
 
@@ -901,11 +955,19 @@ input[name='q']::placeholder {
         #index-container h3 {
             font-size: 0.9rem;
         }
+
+        .keep-shopping-bag {
+            margin-bottom: 10px;
+        }
     }
 
     @media (min-width: 1440px) {
         .scroll-to-top {
             height: 100px;
+        }
+
+        .product-name {
+            font-size: 3rem;
         }
     }
 
@@ -916,5 +978,9 @@ input[name='q']::placeholder {
 
         #index-container h1 {
             font-size: 2.5rem;
+        }
+
+        .product-name {
+            font-size: 2rem;
         }
     }
