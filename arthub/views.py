@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from django.http import HttpResponseServerError
+from django.http import HttpResponseBadRequest
 
 
 def handler400(request):
@@ -19,4 +19,4 @@ def handler500(request):
 
 def trigger_400(request):
     # This will intentionally raise an exception and trigger the 400 error handler
-    raise Exception("Intentional 400 error for testing purposes.")
+    raise HttpResponseBadRequest("Intentional 400 error for testing purposes.")
