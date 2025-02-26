@@ -3,11 +3,11 @@ html {
 }
 
 body {
-    background: url('/media/homepage_background_cropped.webp') no-repeat center center fixed;
+    background: url("/media/homepage_background_cropped.webp") no-repeat center center fixed;
     background-size: cover;
     height: calc(100vh - 164px);
     color: #555;
-    font-family: 'Playfair Display', serif;
+    font-family: "Playfair Display", serif;
 }
 
 /* from Bulma */
@@ -44,7 +44,6 @@ body {
     color: #000000;
 }
 
-
 .logo-font {
     text-transform: uppercase;
 }
@@ -53,7 +52,7 @@ body {
     width: fit-content;
 }
 
-#topnav { 
+#topnav {
     background-color: rgba(0, 0, 0, 0.5);
 }
 
@@ -61,16 +60,16 @@ body {
     background: black;
     color: white;
     min-width: 260px;
-    border: 2px solid #D4AF37;
+    border: 2px solid #d4af37;
 }
 
 .subscribe-button {
-    border: 2px solid #D4AF37;
+    border: 2px solid #d4af37;
 }
 
 .btn-shop {
     background-color: #fff;
-    border: 2px solid #D4AF37;
+    border: 2px solid #d4af37;
 }
 
 .btn-shop:hover,
@@ -83,12 +82,13 @@ body {
 .btn-black {
     background: black;
     color: white;
-    border: 2px solid #D4AF37;
+    border: 2px solid #d4af37;
 }
 
 .btn-outline-black {
     background: white;
-    color: black !important; /* use important to override link colors for <a> elements */
+    color: black !important;
+    /* use important to override link colors for <a> elements */
     border: 1px solid black;
 }
 
@@ -148,13 +148,13 @@ body {
 }
 
 .overlay {
-	height: 100%;
-	width: 100%;
-	top: 0;
-	left: 0;
-	position: fixed;
-	background-color: #f9f9f9;
-	z-index: -1;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    position: fixed;
+    background-color: #f9f9f9;
+    z-index: -1;
 }
 
 /* a.category-badge > span.badge:hover {
@@ -176,7 +176,7 @@ body {
     cursor: pointer;
 }
 
-input[name='q']::placeholder {
+input[name="q"]::placeholder {
     color: #aab7c4;
 }
 
@@ -192,10 +192,14 @@ input[name='q']::placeholder {
 /* Modern toast design */
 .custom-toast {
     overflow: hidden;
-    background: rgba(0, 0, 0, 0.1); /* Semi-transparent black background */
-    backdrop-filter: blur(30px); /* Blur background */
-    border-radius: 15px; /* Rounded corners */
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
+    background: rgba(0, 0, 0, 0.1);
+    /* Semi-transparent black background */
+    backdrop-filter: blur(30px);
+    /* Blur background */
+    border-radius: 15px;
+    /* Rounded corners */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    /* Soft shadow for depth */
 }
 
 .toast-capper {
@@ -204,11 +208,12 @@ input[name='q']::placeholder {
 
 /* Arrow design */
 .arrow-up {
-    width: 0; 
-    height: 0; 
+    width: 0;
+    height: 0;
     border-left: 10px solid transparent;
-    border-right: 10px solid transparent; 
-    border-bottom: 10px solid rgba(40, 167, 69, 0.8); /* Transparent green */
+    border-right: 10px solid transparent;
+    border-bottom: 10px solid rgba(40, 167, 69, 0.8);
+    /* Transparent green */
     position: absolute;
     top: -10px;
     right: 106px;
@@ -216,13 +221,15 @@ input[name='q']::placeholder {
 
 /* Header Styling */
 .custom-toast-header {
-    background: rgba(0, 0, 0, 0.1); /* Semi-transparent black background */
+    background: rgba(0, 0, 0, 0.1);
+    /* Semi-transparent black background */
     font-weight: bold;
 }
 
 /* Body Styling */
 .custom-toast-body {
-    background: rgba(0, 0, 0, 0.1); /* Light translucent background */
+    background: rgba(0, 0, 0, 0.1);
+    /* Light translucent background */
     padding: 15px;
     font-size: 0.95rem;
 }
@@ -236,7 +243,8 @@ input[name='q']::placeholder {
 
 /* Button Styling */
 .btn-dark {
-    background-color: #333; /* Dark button */
+    background-color: #333;
+    /* Dark button */
     border-color: #333;
 }
 
@@ -294,8 +302,10 @@ input[name='q']::placeholder {
 /* Allauth form formatting */
 
 .allauth-form-inner-content p {
-    margin-top: 1.5rem; /* mt-4 */
-    color: #000000; /* text-secondary */
+    margin-top: 1.5rem;
+    /* mt-4 */
+    color: #000000;
+    /* text-secondary */
 }
 
 .allauth-form-inner-content input {
@@ -303,7 +313,7 @@ input[name='q']::placeholder {
     border-radius: 0;
 }
 
-.allauth-form-inner-content label:not([for='id_remember']) {
+.allauth-form-inner-content label:not([for="id_remember"]) {
     display: none;
 }
 
@@ -312,9 +322,9 @@ input[name='q']::placeholder {
 }
 
 .allauth-form-inner-content button,
-.allauth-form-inner-content input[type='submit'] {
-	/* btn */
-	display: inline-block;
+.allauth-form-inner-content input[type="submit"] {
+    /* btn */
+    display: inline-block;
     font-weight: 400;
     color: #fff;
     text-align: center;
@@ -324,29 +334,29 @@ input[name='q']::placeholder {
     -ms-user-select: none;
     user-select: none;
     background-color: #000;
-    border: 2px solid #D4AF37;
-    padding: .375rem .75rem;
+    border: 2px solid #d4af37;
+    padding: 0.375rem 0.75rem;
     font-size: 1rem;
     line-height: 1.5;
 
     /* standard bootstrap btn transitions */
-    transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+    transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out,
+        border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
 }
 
 .allauth-form-inner-content button:hover,
-.allauth-form-inner-content input[type='submit']:hover {	
-	color: #000;
+.allauth-form-inner-content input[type="submit"]:hover {
+    color: #000;
     background-color: gold;
-    
 }
 
 .allauth-form-inner-content a {
-	color: #000; /* text-info */
+    color: #000;
+    /* text-info */
 }
 
-
 #index-container {
-    color: #F1E8D6;
+    color: #f1e8d6;
 }
 
 .login,
@@ -354,20 +364,24 @@ input[name='q']::placeholder {
 .signup,
 .password_change,
 .password_set {
-    max-width: 500px; /* Limit the form width on larger screens */
-    margin: 0 auto;   /* Center the form horizontally */
+    max-width: 500px;
+    /* Limit the form width on larger screens */
+    margin: 0 auto;
+    /* Center the form horizontally */
     padding: 20px;
-  }
+}
 
-  /* Responsive styles for mobile */
+/* Responsive styles for mobile */
 @media (max-width: 768px) {
+
     .login,
     .password_reset,
     .signup,
     .password_change,
     .password_set {
-      width: 90%; /* Reduce form width on smaller screens */
-      padding: 15px;
+        width: 90%;
+        /* Reduce form width on smaller screens */
+        padding: 15px;
     }
 }
 
@@ -413,8 +427,8 @@ input[name='q']::placeholder {
     background-color: #fff;
     border-radius: 50%;
     border: 1px solid gold;
-    width: 40px; 
-    height: 40px; 
+    width: 40px;
+    height: 40px;
     display: none;
     align-items: center;
     justify-content: center;
@@ -428,9 +442,9 @@ input[name='q']::placeholder {
 }
 
 #scroll-link {
-    display: none; /* Initially hide the button */
+    display: none;
+    /* Initially hide the button */
 }
-
 
 .card-body p,
 .card-footer,
@@ -443,7 +457,7 @@ input[name='q']::placeholder {
 
 .btn-edit,
 .btn-delete {
-    border-color: #D4AF37;
+    border-color: #d4af37;
     color: #000;
 }
 
@@ -501,7 +515,6 @@ input[name='q']::placeholder {
 #about-button-container {
     display: flex;
     justify-content: center;
-    
 }
 
 /* Product Form */
@@ -554,17 +567,18 @@ input[name='q']::placeholder {
 /* Adjust image size on smaller screens */
 @media (max-width: 768px) {
     .image-container {
-        max-width: 90%; /* Reduce the width for smaller screens */
+        max-width: 90%;
+        /* Reduce the width for smaller screens */
     }
 }
 
 /* Adjust image size on larger screens */
 @media (min-width: 1200px) {
     .image-container {
-        max-width: 70%; /* Resize the container on larger screens */
+        max-width: 70%;
+        /* Resize the container on larger screens */
     }
 }
-
 
 /* -------- FAQ PAGE -------- */
 
@@ -598,7 +612,6 @@ input[name='q']::placeholder {
     user-select: none;
 }
 
-
 #faq-accordion {
     min-height: 0;
     display: inline-block;
@@ -610,9 +623,8 @@ input[name='q']::placeholder {
     max-width: 900px;
     min-width: 320px;
     padding: 30px;
-    border-radius: 20px
+    border-radius: 20px;
 }
-
 
 #faq-heading {
     text-transform: uppercase;
@@ -666,27 +678,35 @@ input[name='q']::placeholder {
 .faq-ul li:nth-of-type(1) {
     animation-delay: 0.2s;
 }
+
 .faq-ul li:nth-of-type(2) {
     animation-delay: 0.3s;
 }
+
 .faq-ul li:nth-of-type(3) {
     animation-delay: 0.4s;
 }
+
 .faq-ul li:nth-of-type(4) {
     animation-delay: 0.5s;
 }
+
 .faq-ul li:nth-of-type(5) {
     animation-delay: 0.6s;
 }
+
 .faq-ul li:nth-of-type(6) {
     animation-delay: 0.7s;
 }
+
 .faq-ul li:nth-of-type(7) {
     animation-delay: 0.8s;
 }
+
 .faq-ul li:nth-of-type(8) {
     animation-delay: 0.9s;
 }
+
 .faq-ul li:nth-of-type(9) {
     animation-delay: 1s;
 }
@@ -719,7 +739,7 @@ input[name='q']::placeholder {
     transform: translate(2px, 0) rotate(-45deg);
 }
 
-.faq-ul li input[type=checkbox] {
+.faq-ul li input[type="checkbox"] {
     position: absolute;
     cursor: pointer;
     width: 100%;
@@ -728,18 +748,18 @@ input[name='q']::placeholder {
     opacity: 0;
 }
 
-.faq-ul li input[type=checkbox]:checked~p {
+.faq-ul li input[type="checkbox"]:checked~p {
     margin-top: 0;
     max-height: 0;
     opacity: 0;
     transform: translate(0, 50%);
 }
 
-.faq-ul li input[type=checkbox]:checked~i:before {
+.faq-ul li input[type="checkbox"]:checked~i:before {
     transform: translate(2px, 0) rotate(45deg);
 }
 
-.faq-ul li input[type=checkbox]:checked~i:after {
+.faq-ul li input[type="checkbox"]:checked~i:after {
     transform: translate(-2px, 0) rotate(-45deg);
 }
 
@@ -783,229 +803,228 @@ input[name='q']::placeholder {
 /* -------- Footer -------- */
 
 #footer-container {
-    background-color: rgba(0, 0, 0, 0.5); /* 50% opacity black background */
+    background-color: rgba(0, 0, 0, 0.5);
+    /* 50% opacity black background */
 }
-
 
 /* -------------------------------- Media Queries */
 
-    /* Slightly larger container on xl screens */
-    @media (min-width: 1200px) {
-        body {
-            background: url('/media/homepage_background_cropped.webp') no-repeat center center fixed;
-            background-size: cover;
-            height: calc(100vh - 164px);
-            color: #555;
-            font-family: 'Roboto', sans-serif;
-        }
+/* Slightly larger container on xl screens */
+@media (min-width: 1200px) {
+    body {
+        background: url("/media/homepage_background_cropped.webp") no-repeat center center fixed;
+        background-size: cover;
+        height: calc(100vh - 164px);
+        color: #555;
+        font-family: "Roboto", sans-serif;
+    }
 
-        .container {
+    .container {
         max-width: 80%;
-        }
-
-        .footer-credit-icon {
-            font-size: 1.5rem;
-        }
-    }
-  
-    /* fixed top navbar only on medium and up */
-    @media (min-width: 992px) {
-        body {
-            background: url('/media/homepage_background_cropped.webp') no-repeat center center fixed;
-            background-size: cover;
-            height: calc(100vh - 164px);
-            color: #000;
-            font-family: 'Playfair Display', serif;
-        }
-
-        .fixed-top-desktop-only {
-            position: fixed;
-            top: 0;
-            right: 0;
-            left: 0;
-            z-index: 1030;
-        }
-
-        .header-container {
-            padding-top: 164px;
-        }
     }
 
-    /* icons hidden only on medium and small */
-    @media (max-width: 991px) {
-        .hide-on-mobile {
-            display: none !important;
-        }
+    .footer-credit-icon {
+        font-size: 1.5rem;
+    }
+}
 
-        /* pad the top a bit when navbar is collapsed on mobile */
-        .header-container {
-            padding-top: 200px;
-        }
+/* fixed top navbar only on medium and up */
+@media (min-width: 992px) {
+    body {
+        background: url("/media/homepage_background_cropped.webp") no-repeat center center fixed;
+        background-size: cover;
+        height: calc(100vh - 164px);
+        color: #000;
+        font-family: "Playfair Display", serif;
+    }
 
-        body {
-            height: calc(100vh - 200px);
-        }
+    .fixed-top-desktop-only {
+        position: fixed;
+        top: 0;
+        right: 0;
+        left: 0;
+        z-index: 1030;
+    }
 
-        .display-4.logo-font.text-black {
-            font-size: 2rem;
-        }
-    
-        .nav-link {
-            padding: 0.15rem;
-        }
-    
-        .nav-link i.fa-lg {
-            font-size: 1rem;
-        }
-    
-        .navbar-toggler {
-            padding: .6rem .6rem;
-            font-size: 1rem;
-        }
-    
-        #delivery-banner h4 {
-            font-size: .9rem;
-        }
+    .header-container {
+        padding-top: 164px;
+    }
+}
 
-        .btn.btn-shop.rounded-0,
-        .btn.btn-black.rounded-0 {
-            padding: .375rem .375rem;
-        }
-
-        .btn.btn-shop.rounded-0,
-        .btn.btn-black.rounded-0,
-        .allauth-form-inner-content button {
-            padding: .375rem .375rem;
-            font-size: .75rem;
-        }
-
-        .increment-qty,
-        .decrement-qty {
-            padding: .25rem .5rem !important;
-        }
-
-        .toast {
-            position: relative;
-            top: auto;
-            right: 10px;
-
-            width: 300px;
-            height: auto;
-        }
+/* icons hidden only on medium and small */
+@media (max-width: 991px) {
+    .hide-on-mobile {
+        display: none !important;
     }
 
     /* pad the top a bit when navbar is collapsed on mobile */
-    @media (max-width: 425px) {
-        .header-container {
-            padding-top: 230px;
-        }
-
-        body {
-            height: calc(100vh - 230px);
-        }
-
-        #index-container h1 {
-            font-size: 2.0rem;
-        }
-
-        #index-container h3 {
-            font-size: 1.5rem;
-        }
-
-        #error-container h1 {
-            font-size: 2.0rem;
-        }
+    .header-container {
+        padding-top: 200px;
     }
 
-    @media (max-width: 375px) {
-        .keep-shopping-bag {
-            margin-bottom: 10px;
-        }
+    body {
+        height: calc(100vh - 200px);
     }
 
-
-    /* pad the top a bit when navbar is collapsed on mobile */
-    @media (max-width: 375px) {
-        .header-container {
-            padding-top: 300px;
-        }
-
-        body {
-            height: calc(100vh - 300px);
-        }
-
-        #index-container h1 {
-            font-size: 1.6rem;
-            margin: 20px 0px;
-        }
-
-        #index-container h3 {
-            font-size: 1.2rem;
-        }
-
-        #error-container h1 {
-            font-size: 1.6rem;
-        }
+    .display-4.logo-font.text-black {
+        font-size: 2rem;
     }
 
-    @media (min-width: 320px) {
-        .header-container {
-            padding-top: 200px;
-        }
-
-        .heading {
-            font-size: 1.5rem;
-        }
-
-        .product-name {
-            font-size: 1.5rem;
-        }
+    .nav-link {
+        padding: 0.15rem;
     }
 
-    @media (max-width: 320px) {
-        #index-container h1 {
-            font-size: 1.5rem;
-            margin: 40px 0px;
-        }
-
-        #index-container h3 {
-            font-size: 0.9rem;
-        }
-
-        #error-container h1 {
-            font-size: 1.5rem;
-            margin: 40px 0px;
-        }
-
-        .keep-shopping-bag {
-            margin-bottom: 10px;
-        }
+    .nav-link i.fa-lg {
+        font-size: 1rem;
     }
 
-    @media (min-width: 1440px) {
-        .scroll-to-top {
-            height: 100px;
-        }
-
-        .product-name {
-            font-size: 3rem;
-        }
+    .navbar-toggler {
+        padding: 0.6rem 0.6rem;
+        font-size: 1rem;
     }
 
-    @media (min-width: 768px) {
-        .newsletter {
-            padding-left: 0;
-        }
-
-        #index-container h1 {
-            font-size: 2.5rem;
-        }
-
-        .product-name {
-            font-size: 2rem;
-        }
-
-        #error-container h1 {
-            font-size: 2.5rem;
-        }
+    #delivery-banner h4 {
+        font-size: 0.9rem;
     }
+
+    .btn.btn-shop.rounded-0,
+    .btn.btn-black.rounded-0 {
+        padding: 0.375rem 0.375rem;
+    }
+
+    .btn.btn-shop.rounded-0,
+    .btn.btn-black.rounded-0,
+    .allauth-form-inner-content button {
+        padding: 0.375rem 0.375rem;
+        font-size: 0.75rem;
+    }
+
+    .increment-qty,
+    .decrement-qty {
+        padding: 0.25rem 0.5rem !important;
+    }
+
+    .toast {
+        position: relative;
+        top: auto;
+        right: 10px;
+
+        width: 300px;
+        height: auto;
+    }
+}
+
+/* pad the top a bit when navbar is collapsed on mobile */
+@media (max-width: 425px) {
+    .header-container {
+        padding-top: 230px;
+    }
+
+    body {
+        height: calc(100vh - 230px);
+    }
+
+    #index-container h1 {
+        font-size: 2rem;
+    }
+
+    #index-container h3 {
+        font-size: 1.5rem;
+    }
+
+    #error-container h1 {
+        font-size: 2rem;
+    }
+}
+
+@media (max-width: 375px) {
+    .keep-shopping-bag {
+        margin-bottom: 10px;
+    }
+}
+
+/* pad the top a bit when navbar is collapsed on mobile */
+@media (max-width: 375px) {
+    .header-container {
+        padding-top: 300px;
+    }
+
+    body {
+        height: calc(100vh - 300px);
+    }
+
+    #index-container h1 {
+        font-size: 1.6rem;
+        margin: 20px 0px;
+    }
+
+    #index-container h3 {
+        font-size: 1.2rem;
+    }
+
+    #error-container h1 {
+        font-size: 1.6rem;
+    }
+}
+
+@media (min-width: 320px) {
+    .header-container {
+        padding-top: 200px;
+    }
+
+    .heading {
+        font-size: 1.5rem;
+    }
+
+    .product-name {
+        font-size: 1.5rem;
+    }
+}
+
+@media (max-width: 320px) {
+    #index-container h1 {
+        font-size: 1.5rem;
+        margin: 40px 0px;
+    }
+
+    #index-container h3 {
+        font-size: 0.9rem;
+    }
+
+    #error-container h1 {
+        font-size: 1.5rem;
+        margin: 40px 0px;
+    }
+
+    .keep-shopping-bag {
+        margin-bottom: 10px;
+    }
+}
+
+@media (min-width: 1440px) {
+    .scroll-to-top {
+        height: 100px;
+    }
+
+    .product-name {
+        font-size: 3rem;
+    }
+}
+
+@media (min-width: 768px) {
+    .newsletter {
+        padding-left: 0;
+    }
+
+    #index-container h1 {
+        font-size: 2.5rem;
+    }
+
+    .product-name {
+        font-size: 2rem;
+    }
+
+    #error-container h1 {
+        font-size: 2.5rem;
+    }
+}

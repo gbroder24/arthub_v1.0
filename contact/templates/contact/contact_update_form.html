@@ -12,122 +12,125 @@
 
 
 {% block content %}
-    <div class="overlay"></div>
-    <div class="container mt-5">
-        <div id="message-detail-container-outer">
-            <h1 class="logo-font display-4 heading text-center">Message Details</h1>
-            <hr class="w-75 mb-4 mx-auto horizontal-rule">
-            
-            <div id="message-detail-container" class="border p-4 rounded shadow-sm">
-                <small class="text-muted d-block mb-3">Message sent on: <strong>{{ object.date_created }}</strong></small>
-    
-                <!-- DETAILS TABLE -->
-                <div class="table-responsive">
-                    <table class="table table-bordered">
-                        <tbody>
-                            <tr>
-                                <th scope="row" class="detail-table-header">Email:</th>
-                                <td class="bg-light">{{ object.email }}</td>
-                            </tr>
-                            <tr>
-                                <th scope="row" class="detail-table-header">Name:</th>
-                                <td class="bg-light">{{ object.name }}</td>
-                            </tr>
-                            <tr>
-                                <th scope="row" class="detail-table-header">Subject:</th>
-                                <td class="bg-light">{{ object.subject }}</td>
-                            </tr>
-                            <tr>
-                                <th scope="row" class="detail-table-header">Message:</th>
-                                <td  class="bg-light"id="contact-message">{{ object.message }}</td>
-                            </tr>
-                            <tr>
-                                <th scope="row" class="detail-table-header">Responded:</th>
-                                <td class="bg-light">
-                                    {% if object.responded %}
-                                        Yes
-                                    {% else %}
-                                        No
-                                    {% endif %}
-                                </td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-    
-                <a href="{% url 'contact-list' %}" class="btn btn-black">Back to Contact List</a>
-    
-                <div class="text-center my-5" id="message-detail-button-container">
-                    {% if object.responded %}
-                        <!-- No action for responded messages -->
-                    {% else %}
-                        <!-- Displays the response form on click -->
-                        <button class="btn btn-warning keep-shopping-bag" onclick="responseForm()">Respond To Message <i class="fa-solid fa-caret-down"></i></button>
-                    {% endif %}
-                    
-                    <!-- Deletes the message -->
-                    <a class="btn btn-danger btn-delete" href="{%  url 'contact-delete' object.id %}">Delete Message</a>
-                </div>
+<div class="overlay"></div>
+<div class="container mt-5">
+    <div id="message-detail-container-outer">
+        <h1 class="logo-font display-4 heading text-center">Message Details</h1>
+        <hr class="w-75 mb-4 mx-auto horizontal-rule">
+
+        <div id="message-detail-container" class="border p-4 rounded shadow-sm">
+            <small class="text-muted d-block mb-3">Message sent on: <strong>{{ object.date_created }}</strong></small>
+
+            <!-- DETAILS TABLE -->
+            <div class="table-responsive">
+                <table class="table table-bordered">
+                    <tbody>
+                        <tr>
+                            <th scope="row" class="detail-table-header">Email:</th>
+                            <td class="bg-light">{{ object.email }}</td>
+                        </tr>
+                        <tr>
+                            <th scope="row" class="detail-table-header">Name:</th>
+                            <td class="bg-light">{{ object.name }}</td>
+                        </tr>
+                        <tr>
+                            <th scope="row" class="detail-table-header">Subject:</th>
+                            <td class="bg-light">{{ object.subject }}</td>
+                        </tr>
+                        <tr>
+                            <th scope="row" class="detail-table-header">Message:</th>
+                            <td class="bg-light" id="contact-message">{{ object.message }}</td>
+                        </tr>
+                        <tr>
+                            <th scope="row" class="detail-table-header">Responded:</th>
+                            <td class="bg-light">
+                                {% if object.responded %}
+                                Yes
+                                {% else %}
+                                No
+                                {% endif %}
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
             </div>
-        </div>
-    
-        <!-- Response form -->
-        <div id="formDiv"style="display: none;" class="mt-5">
-            <div class="custom-form-outer-container">
-                <div class="custom-form-inner-container border p-4 rounded shadow-sm">
-                    <form method="POST" id="response-form">
-                        {% csrf_token %}
-                        {{ form.as_p }}
-                        
-                        <div class="form-group">
-                            <label for="email">Email To:</label>
-                            <input type="email" id="email" class="form-control" placeholder="Email" readonly value="{{ object.email }}">
-                        </div>
-                        <div class="form-group">
-                            <label for="subject">Subject:</label>
-                            <input type="text" id="subject" class="form-control" placeholder="Subject" readonly value="{{ object.subject }}">
-                        </div>
-    
-                        <div class="form-group">
-                            <label for="email_body">Email Body:</label>
-                            <textarea id="email_body" name="email_body" class="form-control" rows="10" cols="50">
-                                Dear {{ object.name }},&#10;&#10;...&#10;&#10;&#10;Arthub&#10;https://django-pp5-arthub-37c0b88f7fd7.herokuapp.com/
-                            </textarea>
-                        </div>
-    
-                        <button class="btn btn-success" id="responded-update-button" type="submit">Send Email</button>
-                    </form>
-                </div>
+
+            <a href="{% url 'contact-list' %}" class="btn btn-black">Back to Contact List</a>
+
+            <div class="text-center my-5" id="message-detail-button-container">
+                {% if object.responded %}
+                <!-- No action for responded messages -->
+                {% else %}
+                <!-- Displays the response form on click -->
+                <button class="btn btn-warning keep-shopping-bag" onclick="responseForm()">Respond To Message <i
+                        class="fa-solid fa-caret-down"></i></button>
+                {% endif %}
+
+                <!-- Deletes the message -->
+                <a class="btn btn-danger btn-delete" href="{%  url 'contact-delete' object.id %}">Delete Message</a>
             </div>
         </div>
     </div>
-    
-    <script>
-        // Show/hide the response form and scroll to it when the button is clicked
-        function responseForm() {
-            var form = document.getElementById("formDiv");
-            if (form.style.display === "none") {
-                form.style.display = "block";
-                scrollToResponseForm();  // Scroll to the form after it is shown
-            } else {
-                form.style.display = "none";
-            }
-        
-            // Set responded status to True (optional, depends on your setup)
-            let checkBox = document.getElementById("id_responded")
-            if (checkBox) {
-                checkBox.checked = true;
-            }
+
+    <!-- Response form -->
+    <div id="formDiv" style="display: none;" class="mt-5">
+        <div class="custom-form-outer-container">
+            <div class="custom-form-inner-container border p-4 rounded shadow-sm">
+                <form method="POST" id="response-form">
+                    {% csrf_token %}
+                    {{ form.as_p }}
+
+                    <div class="form-group">
+                        <label for="email">Email To:</label>
+                        <input type="email" id="email" class="form-control" placeholder="Email" readonly
+                            value="{{ object.email }}">
+                    </div>
+                    <div class="form-group">
+                        <label for="subject">Subject:</label>
+                        <input type="text" id="subject" class="form-control" placeholder="Subject" readonly
+                            value="{{ object.subject }}">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email_body">Email Body:</label>
+                        <textarea id="email_body" name="email_body" class="form-control" rows="10" cols="50">
+                                Dear {{ object.name }},&#10;&#10;...&#10;&#10;&#10;Arthub&#10;https://django-pp5-arthub-37c0b88f7fd7.herokuapp.com/
+                            </textarea>
+                    </div>
+
+                    <button class="btn btn-success" id="responded-update-button" type="submit">Send Email</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    // Show/hide the response form and scroll to it when the button is clicked
+    function responseForm() {
+        var form = document.getElementById("formDiv");
+        if (form.style.display === "none") {
+            form.style.display = "block";
+            scrollToResponseForm();  // Scroll to the form after it is shown
+        } else {
+            form.style.display = "none";
         }
-        
-        // Smooth scroll to the response form
-        function scrollToResponseForm() {
-            const formDiv = document.getElementById('formDiv'); // This should be the correct element ID
-            formDiv.scrollIntoView({
-                behavior: 'smooth',  // This makes the scroll smooth
-                block: 'start'       // Align the top of the form to the top of the viewport
-            });
+
+        // Set responded status to True (optional, depends on your setup)
+        let checkBox = document.getElementById("id_responded")
+        if (checkBox) {
+            checkBox.checked = true;
         }
-    </script>
+    }
+
+    // Smooth scroll to the response form
+    function scrollToResponseForm() {
+        const formDiv = document.getElementById('formDiv'); // This should be the correct element ID
+        formDiv.scrollIntoView({
+            behavior: 'smooth',  // This makes the scroll smooth
+            block: 'start'       // Align the top of the form to the top of the viewport
+        });
+    }
+</script>
 
 {% endblock %}

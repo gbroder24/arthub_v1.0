@@ -1,0 +1,4 @@
+User-agent: *
+Disallow: /accounts/
+Disallow: /bag/
+Sitemap: https://django-pp5-arthub-37c0b88f7fd7.herokuapp.com/sitemap.xml
