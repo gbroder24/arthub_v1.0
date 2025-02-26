@@ -12,25 +12,24 @@
 
 
 {% block content %}
-<!-- Unsubscribe Page -->
-<div class="overlay"></div>
-<div class="default-page-container container py-5">
-    <div class="text-center">
-        <!-- Page Header -->
-        <h1 class="display-4 mb-4">Unsubscribe</h1>
-        <hr class="w-50 py-2">
-
-        <!-- Information about unsubscribing -->
-        <p class="lead mb-4">Are you sure you want to unsubscribe from our mailing list? You can always resubscribe
-            later.</p>
-
-        <!-- Unsubscribe Button -->
-        <div id="unsubscribe-button-container">
-            <a class="btn btn-danger btn-lg" href="{% url 'mailing-list-unsubscribe' user.email %}" role="button">
-                Unsubscribe
-            </a>
+    <!-- Unsubscribe Page -->
+    <div class="overlay"></div>
+    <div class="default-page-container container py-5"> 
+        <div class="text-center">
+            <!-- Page Header -->
+            <h1 class="display-4 mb-4">Unsubscribe</h1>
+            <hr class="w-50 py-2">
+    
+            <!-- Information about unsubscribing -->
+            <p class="lead mb-4">Are you sure you want to unsubscribe from our mailing list? You can always resubscribe later.</p>
+    
+            <!-- Unsubscribe Button -->
+            <div id="unsubscribe-button-container">
+                <a class="btn btn-danger btn-lg" href="{% url 'mailing-list-unsubscribe' user.email %}" role="button">
+                    Unsubscribe
+                </a>
+            </div>
         </div>
     </div>
-</div>
-
+    
 {% endblock %}

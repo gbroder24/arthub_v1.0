@@ -2,15 +2,15 @@
 {% load static %}
 
 {% block extra_css %}
-<link rel="stylesheet" href="{% static 'profiles/css/profile.css' %}">
+    <link rel="stylesheet" href="{% static 'profiles/css/profile.css' %}">
 {% endblock %}
 
 {% block page_header %}
-<div class="container header-container">
-    <div class="row">
-        <div class="col"></div>
+    <div class="container header-container">
+        <div class="row">
+            <div class="col"></div>
+        </div>
     </div>
-</div>
 {% endblock %}
 
 {% block content %}
@@ -30,8 +30,7 @@
                     {% csrf_token %}
                     <div class="card shadow-sm p-4">
                         {{ form|crispy }}
-                        <button class="btn btn-black rounded-0 text-uppercase float-md-right w-100 w-md-auto">Update
-                            Information</button>
+                        <button class="btn btn-black rounded-0 text-uppercase float-md-right w-100 w-md-auto">Update Information</button>
                     </div>
                 </form>
             </div>
@@ -49,27 +48,27 @@
                         </thead>
                         <tbody>
                             {% for order in orders %}
-                            <tr>
-                                <td>
-                                    <a class="category-text" href="{% url 'order_history' order.order_number %}"
+                                <tr>
+                                    <td>
+                                        <a class="category-text" href="{% url 'order_history' order.order_number %}"
                                         title="{{ order.order_number }}">
-                                        {{ order.order_number|truncatechars:6 }}
-                                    </a>
-                                </td>
-                                <td>{{ order.date }}</td>
-                                <td>
-                                    <ul class="list-unstyled">
-                                        {% for item in order.lineitems.all %}
-                                        <li class="small">
-                                            {% if item.product.has_sizes %}
-                                            Size {{ item.product.size|upper }}
-                                            {% endif %}{{ item.product.name }} x{{ item.quantity }}
-                                        </li>
-                                        {% endfor %}
-                                    </ul>
-                                </td>
-                                <td>${{ order.grand_total }}</td>
-                            </tr>
+                                            {{ order.order_number|truncatechars:6 }}
+                                        </a>
+                                    </td>
+                                    <td>{{ order.date }}</td>
+                                    <td>
+                                        <ul class="list-unstyled">
+                                            {% for item in order.lineitems.all %}
+                                                <li class="small">
+                                                    {% if item.product.has_sizes %}
+                                                        Size {{ item.product.size|upper }}
+                                                    {% endif %}{{ item.product.name }} x{{ item.quantity }}
+                                                </li>
+                                            {% endfor %}
+                                        </ul>
+                                    </td>
+                                    <td>${{ order.grand_total }}</td>
+                                </tr>
                             {% endfor %}
                         </tbody>
                     </table>
@@ -77,10 +76,10 @@
             </div>
         </div>
     </div>
+    
+{% endblock %}
 
-    {% endblock %}
-
-    {% block postloadjs %}
+{% block postloadjs %}
     {{ block.super }}
     <script type="text/javascript" src="{% static 'profiles/js/countryfield.js' %}"></script>
-    {% endblock %}
+{% endblock %}
