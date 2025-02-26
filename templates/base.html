@@ -97,7 +97,7 @@
             <div class="col-12 col-lg-3 my-auto py-1 py-lg-0 d-none d-lg-block">
                 <ul class="list-inline list-unstyled text-center text-lg-right my-0">
                     <li class="list-inline-item dropdown">
-                        <a class="text-white nav-link" href="#" id="user-options" data-toggle="dropdown"
+                        <a class="text-white nav-link" href="#" id="user-options-1" data-toggle="dropdown"
                             aria-haspopup="true" aria-expanded="false">
                             <div class="text-center">
                                 <div><i class="fas fa-user fa-lg"></i></div>
@@ -141,8 +141,7 @@
         <!-- Delivery Banner -->
         <div id="delivery-banner" class="row text-center">
             <div class="col bg-black text-white">
-                <h4 class="logo-font my-1">10% Off Prints and Free Delivery On Orders Over €{{ free_delivery_threshold
-                    }}!</h4>
+                <h4 class="logo-font my-1">10% Off Prints and Free Delivery On Orders Over €{{ free_delivery_threshold}}!</h4>
             </div>
         </div>
     </header>
@@ -249,11 +248,11 @@
 
 
     {% block postloadjs %}
-    <script type="text/javascript">
+    <script>
         $('.toast').toast('show');
     </script>
 
-    <script type="text/javascript">
+    <script>
         var backToTopBtn = document.getElementById("scroll-link");
 
         // When the user scrolls down 20px from the top of the document, show the button

@@ -383,6 +383,11 @@ input[name="q"]::placeholder {
         /* Reduce form width on smaller screens */
         padding: 15px;
     }
+
+    .dropdown-menu {
+        left: -150px;
+    }
+    
 }
 
 /* -------- PRODUCTS PAGE -------- */
