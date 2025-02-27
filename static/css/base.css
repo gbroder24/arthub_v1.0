@@ -1006,9 +1006,28 @@ input[name="q"]::placeholder {
     }
 }
 
+@media (min-width: 2560px) {
+
+    body {
+        font-size: 2rem;
+    }
+
+    .hero-container {
+        padding-top: 300px;
+    }
+
+    #footer-container {
+        margin-top: 470px !important; 
+    }
+}
+
 @media (min-width: 1440px) {
     .scroll-to-top {
         height: 100px;
+    }
+
+    .container-fliuid {
+        padding-top: 370px;
     }
 
     .product-name {

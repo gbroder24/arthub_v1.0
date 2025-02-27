@@ -317,13 +317,72 @@ Test scenarios for the Failte Bistro application were created by the Junior Full
 1. Important: Close your Command Prompt if you still have it open, then reopen a new one using Win+R.  
 2. In the Command Prompt, type: python3 --version pip3 --version
 3. If both commands return version number 3.12, Python is ready to use!  
-4. If python3 command returns an error, please also try: python --version     
+4. If python3 command returns an error, please also try: python --version  
+
+#### Install Git
+
+1. Check Git Installation. n the Command Prompt, type: git --version  
+2. If you see something like git version 2.x.x, Git is already installed, proceed  to Installing VS Code.  
+3. If you see an error, e.g. 'git' is not recognised, follow the steps below.  
+
+#### Identify your Windows system type
+
+1. Press Win + R.  
+2. Open the System Information Window by typing msinfo32, and hit Enter.  
+3. In the System Information window, look for System Type:  x64-based PC means 64-bit. x86-based PC means 32-bit.  
+
+#### Download and install Git
+
+1. Go to https://git-scm.com/downloads/win in your browser. If you have a 64 bit system, click the Click here to download link just under the Download for Windows heading. If you have a 32 bit system, click the 32-bit Git for Windows Setup link under the Standalone Installer heading.  
+2. Open the downloaded file from your Downloads folder.  
+3. Follow the installation steps. Keep all the default options unless you know specific changes are needed. Ensure that on the 'Adjusting your PATH environment' screen the option Git from the command line and also from 3-rd party software should be selected. On the 'Configuring the line ending conversions' screen, the option Checkout Windows-style, commit Unix-style line endings should be selected.  
+4. Keep the rest options at default and then Finish to complete the installation  
+5. A browser window for Git Release Notes might have opened for you, you may close it if you wish.  
+
+#### Verify Git Installation
+
+1. Important: Close your Command Prompt if you still have it open, then reopen a new one using Win+R  
+2. In the Command Prompt, type: git --version You should see a version number, confirming Git is installed  
+
+#### Setup Git
+
+1. In the Command Prompt, set up your name and email: git config --global user.name "YourGitHubUsername". Replace "YourGitHubUsername" with your GitHub username. git config --global user.email "your.email@example.com". Replace  "your.email@example.com" with the email address you registered with GitHub.  
+2. Verify your setup git config --list If you see your name and email listed, you are all set. If you see the wrong email address, repeat step b with the correct email address.  
+
+#### Install Visual Studio Code (VS Code)
+
+1. Check if VS Code is already installed. Press Windows + S and type Visual Studio Code, and press Enter.  
+2. If VS Code opens, it's already installed, you are all set.  
+3. If not, follow the steps below.  
+
+#### Install VS Code
+
+1. Go to https://code.visualstudio.com/download in your browser.  
+2. Click the Download for Windows button.  
+3. Open the downloaded file from your Downloads folder.  
+4. Follow the installation steps. On the 'Select Additional Tasks' screen Check the Add 'Open with Code' action to Windows Explorer file context menu. Click Next, then  Install and wait for it to finish.  
+
+#### Verify VS Code installation
+
+1. In the Command Prompt, type code --version If you see a version number, VS Code is ready to use. To ensure all required settings are enabled, restart your machine.  
+
+#### Install extensions
+
+1. While in VS Code, navigate to the Extensions Marketplace in the left bar.  
+2. Use the search bar in the extensions section to search for and install the following extensions Prettier, Python, Flake8, Bootstrap 4 CDN Snippet, Auto Open Preview Panel.  
+
+#### Create a folder for your projects
+
+1. Open your file manager.  
+2. Select a preferred location (i.e. Documents), create a new folder in your folder structure and name it vscode-projects.  
+
+Congratulations! You are now ready to continue on working in VS Code. Happy coding!
 
 ### Remote
 
 This website was deployed using GitHub pages. The steps to deploy are as follows:
 
-1. Login to GitHub and navigate to the repository page (body-and-mind), click on the repository.
+1. Login to GitHub and navigate to the repository page (arthub), click on the repository.
 2. Once inside the repository, click on the "Settings" tab above the repository title.
 3. Under "Code and automation" select "Pages" tab on the left side navigation menu.
 4. In the "Build and Deployment" section (middle of the screen), under "Source" select from the drop-down menu "Deploy from a branch".
