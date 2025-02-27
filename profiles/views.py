@@ -37,13 +37,38 @@ def profile(request):
 
 
 def order_history(request, order_number):
+    # Get the order object or return 404 if not found
     order = get_object_or_404(Order, order_number=order_number)
 
+    # Check if the order is linked to a user profile
+    if order.user_profile:
+        # This is an order placed by a logged-in user
+        try:
+            # Try to get the user profile for the logged-in user
+            profile = UserProfile.objects.get(user=request.user)
+        except UserProfile.DoesNotExist:
+            messages.error(request, "User profile not found.")
+            return render(request, "errors/404.html", status=404)
+
+        # Check if the logged-in user has permission to view the order
+        if order.user_profile != profile:
+            messages.error(
+                request, "You do not have permission to view this order.")
+            return render(request, "errors/404.html", status=404)
+
+    else:
+        # If the order is anonymous, prevent a logged-in user from viewing it
+        if request.user.is_authenticated:
+            messages.error(request, "You cannot view an anonymous order.")
+            return render(request, "errors/404.html", status=404)
+
+    # Success message for valid order
     messages.info(request, (
         f'This is a past confirmation for order number {order_number}. '
         'A confirmation email was sent on the order date.'
     ))
 
+    # Return the success page with the order context
     template = 'checkout/checkout_success.html'
     context = {
         'order': order,
