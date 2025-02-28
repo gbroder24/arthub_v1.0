@@ -185,10 +185,239 @@ email address if they are interested in learning more.
 
 Users can also unsubscribe from the newsletter by following the link in their subscription confirmation email.
   
-
 ## Features  
 
+### User View - Registered/Unregistered/Admin
 
+It was important to me from the beginning that Arthub is accessible to an unregistered user, in some capacitites. I wanted the website to sell the product to a new user quickly by immediately displaying text describing the sites goals and inviting them to purchase a product, view the product images, signup to a newsletter system and have the choice to register for a personal account. The following is a breakdown of the site's accessibility for registered/unregistered users:
+
+| Feature   | Unregistered User | Registered, Logged-In User | Staff, Admin |
+|-----------|-------------------|-----------------|-----------------|
+| Home Page | Visable           | Visable         | Visable         |
+| About Page | Visable          | Visable         | Visable         |
+| FAQ Page | Visable          | Visable         | Visable         |
+| Products Page      | Visable           | Visable         | Visable and full feature interaction available         |
+| Product Detail Page | Visable  | Visable         | Visable and full feature interaction available          |
+| Bag Page | Visable  | Visable         | Visable         |
+| Checkout Page | Visable  | Visable and full feature interaction available        | Visable and full feature interaction available        |
+| Contact Page | Visable  | Visable         | Visable         |
+| Profile Page | Not Visable  | Visable         |  Visable         |
+| Add Product Page | Not Visable  | Not Visable         |  Visable         |
+| Edit Product Page | Not Visable  | Not Visable         |  Visable         |
+| Contact Requests Page | Not Visable  | Not Visable         |  Visable         |
+| Contact Update Page | Not Visable  | Not Visable         |  Visable         |
+| Contact Delete Page | Not Visable  | Not Visable         |  Visable         |
+| Subscribe Page | Visable  | Visable and full feature interaction available       |  Visable and full feature interaction available       |
+
+### Favicon
+
+- The [ Favicon ](https://favicon.io/) image has a simple design to easily inform the user that this is the logo of the art printers. It also aligns with the color scheme.
+
+![ Favicon ](documentation/features/favicon.JPG) 
+
+### Navbar  
+
+- The NavBar has a sleek and slimple design to easily help the user navigate around the page, with the brand name clearly conveying to the user who the page belongs to. 
+
+![ Navbar ](documentation/features/navbar-unregistered-desktop.JPG)  
+
+![ Navbar ](documentation/features/navbar-registered-desktop.JPG) 
+
+![ Navbar ](documentation/features/navbar-staff-desktop.JPG) 
+
+![ Navbar ](documentation/features/navbar-mobile.JPG)
+
+### Footer
+
+- The footer displays the site pages, my account pages. The footer has been created with the github icon, from [Font Awesome](https://fontawesome.com/), opens in a new tab when clicked.  It also displays text about the Junior Full Stack Developer.
+
+![ Footer ](documentation/features/footer-contact-desktop.JPG)
+
+### Back To Top
+
+- The Back To Top link again has a simple design. When the user clicks the button, it typically triggers a JavaScript function to scroll the page back to the top. It also aligns with the color scheme. This feature enhances the user experience.
+
+![ Back To Top ](documentation/features/back-to-top.JPG) 
+
+
+### Hero  
+
+- The hero section serves as the main landing page for the website, providing branding with the business name and a clear purpose and explanation of what the main goals of the site are with links to view the products and information.
+
+![ Hero ](documentation/features/hero-desktop.JPG)
+
+### About
+
+- The About section informs the user why they should choose Arthub.
+
+![ About ](documentation/features/about-content-desktop.JPG)
+
+### FAQ
+
+- FAQ Page. Displays the most frequently asked questions about the site. Lets users know essential information and quells worries that they may have about the site and its products. Accordion serves to make the information engaging and clean.
+
+![ FAQ ](documentation/features/faq-desktop.JPG)
+
+### Contact
+
+- Contact Page. Users can contact the site owner using the contact form. If the user is logged in, their email is pre-filled in the email input field. Users can choose from a selection of subjects and leave their message via the text box.
+
+![ Contact ](documentation/features/contact-desktop.JPG)
+
+- Contact Success Page. Users see this page after sending a contact message via the contact page. This page serves to confirm to the user that their message has been sent successfully. A short message informs the user that their contact message has been received, and that one of the team will respond as soon as possible.
+
+![ Contact ](documentation/features/message-sent.JPG)
+
+### Products / Product Detail
+
+- Products page. Displays the site products available for the user to purchase. Displays images of products and their essential information including title, description, price, category & rating. Print products are displayed in a pleasing responsive grid layout, making it easy for a user to browse the products. Products utilise a mouse-hover animation to add to the interactivity of the page. Products can also be filtered and sorted by name, price and other criteria.
+
+- Administrators viewing this page can see links under each course to edit or delete the course.
+
+![ Products ](documentation/features/products-desktop.JPG)
+
+![ Products ](documentation/features/products-staff.JPG)
+
+![ Product Detail ](documentation/features/product-detail-desktop.JPG)
+
+![ Products Detail ](documentation/features/product-detail-staff.JPG)
+
+### Toasts
+
+-  Via toasts, users can see a summary of their bag whenever an item is added, allowing the user to quickly see the new state of their bag, without having to navigate away from the page they are currently on.
+- Users see helpful popup messages when performing actions on the site. These messages inform the user of the success or failure of their actions, as well as providing information about an action taken, or steps that the user must take in order to correct an action.
+
+![ Success Toast ](documentation/features/success-toast.JPG)
+
+![ Information Toast ](documentation/features/toast-info.JPG)
+
+![ Error Toast ](documentation/features/toast-error.JPG)
+
+### Bag
+
+- Shopping Bag page. Displays all items currently in the user's shopping bag. Users get a message if their basket is empty, otherwise they will see a list of products that they have selected with a button to navigate to the products page, and another to navigate to the checkout page.
+
+![ Bag ](documentation/features/bag-desktop.JPG)
+
+### Checkout
+
+- Checkout page. Displays an order summary of the items that are being prepared for purchase with accompanying item details. Displays a total cost of the order to the user. The user also sees a form to fill in their personal details. For logged in users, these details will be pre-filled if the user has provided that information in the past. A tooltip explains to users to fill out the required fields. A checkbox allows users to save entered information to their profile. A payment input form exists at the bottom of the page for a user to enter their payment card information. A message below this warns the user that advancing will complete the purchase and incur a charge to their card.
+
+![ Checkout ](documentation/features/checkout-desktop-1.JPG)
+
+![ Checkout ](documentation/features/checkout-desktop-2.JPG)
+
+![ Checkout ](documentation/features/checkout-desktop-prefilled.JPG)
+
+### Loading Spinner
+
+- A loading spinner with the text "Processing your order. Please wait..." indicates that the system is currently handling the payment and the user should wait for it to complete.
+
+![ Loading Spinner ](documentation/features/spinner.JPG)
+
+### Order Success
+
+- Order Success Page. Displays a thank you message to the user, as well as a message describing how to access their purchased print. Also displays an order summary with all the relevant information, including a unique order number of 10 random digits & letters generated by uuid. The user can also view a latest deals button.
+
+![ Order Success ](documentation/features/order-list-success-toast.JPG)
+
+![ Order ](documentation/features/order-list.JPG)
+
+![ Order ](documentation/features/latest-deals.JPG)
+
+### Profile
+
+- User profiles are automatically created upon user registration. This assigns each user a profile which they can use to see/update their user information.
+- Users can update their profile information using a front-end form located on their user profile page. This allows users to update profile information or correct possible mistakes made at registration.
+
+![ Profile ](documentation/features/my-profile.JPG)
+
+### Stripe
+
+
+
+![ Stripe ](documentation/features/stripe-events.JPG)
+
+![ Stripe ](documentation/features/stripe-webhook-endpoint.JPG)
+
+![ Stripe ](documentation/features/strip-logs.JPG)
+
+### Products Management
+
+- Add Product Page. Admins can use this form to add new products to the site. User-friendly form inputs allow product objects to be created simply and quickly.
+
+![ Products Management ](documentation/features/add-product-staff.JPG)
+
+- Edit Product Page. Admins can use this form to add edit products to the site. User-friendly form inputs allow product objects to be edited simply and quickly. A message at the top of the page informs the admin which product they are editing.
+
+![ Products Management ](documentation/features/edit-product-staff.JPG)
+
+- Delete Product Modal. Admins can use this modal to delete products on the site. User-friendly modal allows product objects to be deleted simply and quickly.
+
+![ Products Management ](documentation/features/delete-product.JPG)
+
+### Contact Requests
+
+- Admins can see a list of all of the contact messages sent by users. Messages are displayed in an easy-to-read table, with all of the salient information presented. Messages are automatically sorted with those messages which have not been responded to at the top of the list, with the oldest (the message which has gone unanswered the longest) at the top. Admins can click on the view details links to see the full contact messages, as well as respond to the message.
+-  Admins can see details of a contact message left by the user. All of the contact message's information can be seen, including email, name, subject, message, and whether this contact message has been respond to. Contact messages can be responded to or deleted via the large buttons at the bottom of the page. A link navigates back to the contact requests page.
+
+![ Contact Requests ](documentation/features/contact-requests.JPG)
+
+![ Contact Requests ](documentation/features/message-details.JPG)
+
+- Admins can respond to user contact messages using an email form which appears upon clicking the 'respond to message' button on the contact details page. A text area appears with the user's name and the default email signoff link pre-populated for efficiency in the typing of the response. The 'Send Email' button sends an email response to the user's given email address with the content of the text box as the body of the email.
+
+![ Contact Requests ](documentation/features/respond-message.JPG)
+
+- The contact message is then automatically marked as 'Responded' and the 'respond to message' button no longer appears on that message's details page.
+
+![ Contact Requests ](documentation/features/message-responded.JPG)
+
+- Admins can delete contact messages from the database using a front end delete function inside the contact message details page.
+
+![ Contact Requests ](documentation/features/delete-message.JPG)
+
+### Register
+
+ - Signup Page. Displays a signup form that new users can use to register an account on the site. Simple input fields for email, username and password make it easy for users to sign up for an account, an confirmation inputs insure that users do not accidentally register with incorrect information. A sign in link at the top of the page lets users who already have an account easily find the login page.
+
+![ Register ](documentation/features/register.JPG)
+
+### Email Verification
+
+- The verify email feature sends a confirmation link to the user's email to ensure the address is valid. The confirm email feature is the action of the user entering the link into their browser and clicking the link to validate their email address.
+
+![ Email Verification ](documentation/features/verify-email.JPG)
+
+![ Email Verification ](documentation/features/confirm-email.JPG)
+
+### Signin
+
+- Login Page. Displays a login form that existing users can use to log in to the site. Two simple input fields for username and password make it easy for users to log in to their account. A 'remember me' checkbox allows users to choose to have their login information stored for faster login in future. A Forgot Password link takes users to another page where they can recover their password. A sign up link at the top of the page lets users who do not yet have an account easily find the register page.
+
+![ Signin ](documentation/features/signin.JPG)
+
+![ Signin ](documentation/features/login-success-toast.JPG)
+
+### Logout
+
+- Logout Page. Displays a logout confirmation message with two buttons allowing the user to confirm the action and logout, or to return to the previous page and stay logged in.
+
+![ Signin ](documentation/features/signin.JPG)
+
+### Newsletter
+
+- Users can subscribe to a newsletter by clicking a link. Once the user is logged in, the email input field will pre-fill with the user's email. Users can click the link in their newsletter email to unsubscribe from the site newsletter. Once the user is logged in, the email input field will pre-fill with the user's email. Users see a confirmation screen after unsubscribing.
+
+![ Newsletter ](documentation/features/newsletter-subscribe.JPG)
+
+![ Newsletter ](documentation/features/unsubscribe.JPG)
+
+### Error 404
+
+- Custom error handler page. This page displays when a user encounters the following common error: 404. This provides a more user-friendly error page than the user would see otherwise and includes an informative message and button to return home to the site. 
+
+![ Error 404 ](documentation/features/error-404.JPG)
 
 ### Future Features
 
