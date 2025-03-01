@@ -27,9 +27,10 @@
                         <div>
                             <div>
                                 <div class="pt-5 text-center">
-                                    <h6><strong>Sub Total (Discount Applied): €{{ total|floatformat:2 }}</strong></h6>
-                                    <h6>Delivery: €{{ delivery|floatformat:2 }}</h6>
-                                    <h4 class="mt-4"><strong>Grand Total: €{{ grand_total|floatformat:2 }}</strong></h4>
+                                    
+                                    <h3 class="mt-4"><strong>Grand Total: €{{ grand_total|floatformat:2 }}</strong></h3>
+                                    <h4><strong>Sub Total (Discount Applied): €{{ total|floatformat:2 }}</strong></h4>
+                                    <h5>Delivery: €{{ delivery|floatformat:2 }}</h5>
                                     {% if free_delivery_delta > 0 %}
                                     <p class="mb-1 text-danger">
                                         You could get free delivery by spending just <strong>€{{ free_delivery_delta|floatformat:2 }}</strong> more!
@@ -83,7 +84,7 @@
                                                     <div class="input-group">
                                                         <div class="input-group-prepend">
                                                             <button class="decrement-qty btn btn-sm btn-black rounded-0" 
-                                                                data-item_id="{{ item.item_id }}" id="decrement-qty_{{ item.item_id }}">
+                                                                data-item_id="{{ item.item_id }}" id="decrement-qty_{{ item.item_id }}" aria-label="decrement quantity">
                                                                 <span>
                                                                     <i class="fas fa-minus fa-sm"></i>
                                                                 </span>
@@ -92,10 +93,10 @@
                                                         <input class="form-control form-control-sm qty_input text-center" type="number"
                                                             name="quantity" value="{{ item.quantity }}" min="1" max="99"
                                                             data-item_id="{{ item.item_id }}"
-                                                            id="id_qty_{{ item.item_id }}">
+                                                            id="id_qty_{{ item.item_id }}" aria-label="Quantity">
                                                         <div class="input-group-append">
                                                             <button class="increment-qty btn btn-sm btn-black rounded-0"
-                                                                data-item_id="{{ item.item_id }}" id="increment-qty_{{ item.item_id }}">
+                                                                data-item_id="{{ item.item_id }}" id="increment-qty_{{ item.item_id }}" aria-label="increment quantity">
                                                                 <span>
                                                                     <i class="fas fa-plus fa-sm"></i>
                                                                 </span>
@@ -104,13 +105,13 @@
                                                     </div>
                                                 </div>
                                             </form>
-                                            <a class="update-link btn btn-primary btn-sm btn-edit"><small>Update</small></a>
+                                            <button class="update-link btn btn-primary btn-sm btn-edit"><small>Update</small></button>
                                             <a class="remove-item btn btn-danger btn-sm btn-delete float-right" id="remove_{{ item.item_id }}"><small>Remove</small></a>
                                         </div>
                                     
                             
                                     <div class="py-3">
-                                        <h6>Subtotal (Discount Applied <span class="text-danger">-10%</span>)</h6>
+                                        <h6>Subtotal (Discount Applied <span>-10%</span>)</h6>
                                         <p class="my-0 text-black">€{{ item.product | calc_subtotal:item.quantity|floatformat:2 }}</p>
                                     </div>
                                 </div>

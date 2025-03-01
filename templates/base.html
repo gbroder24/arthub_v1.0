@@ -71,9 +71,9 @@
                         <input class="form-control border border-black rounded-0" type="text" name="q"
                             placeholder="Search our site">
                         <div class="input-group-append">
-                            <button class="form-control btn btn-black border border-black rounded-0" type="submit">
+                            <button class="form-control btn btn-black border border-black rounded-0" type="submit" aria-label="Search">
                                 <span class="icon">
-                                    <i class="fas fa-search"></i>
+                                    <i class="fas fa-search text-white"></i>
                                 </span>
                             </button>
                         </div>
@@ -141,7 +141,7 @@
         <!-- Delivery Banner -->
         <div id="delivery-banner" class="row text-center">
             <div class="col bg-black text-white">
-                <h4 class="logo-font my-1">10% Off Prints and Free Delivery On Orders Over €{{ free_delivery_threshold}}!</h4>
+                <h3 class="logo-font my-1">10% Off Prints and Free Delivery On Orders Over €{{ free_delivery_threshold}}!</h3>
             </div>
         </div>
     </header>
@@ -184,35 +184,35 @@
 
             <!-- Site Pages Section -->
             <div class="col-12 col-md-4 mb-3 pl-5">
-                <h5 class="text-uppercase mb-3">Site Pages</h5>
+                <h3 class="text-uppercase mb-3">Site Pages</h3>
                 <ul class="nav flex-column">
-                    <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-light">Home</a></li>
-                    <li class="nav-item mb-2"><a href="{% url 'products' %}" class="nav-link p-0 text-light">Artists</a>
+                    <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-white">Home</a></li>
+                    <li class="nav-item mb-2"><a href="{% url 'products' %}" class="nav-link p-0 text-white">Artists</a>
                     </li>
-                    <li class="nav-item mb-2"><a href="{% url 'about' %}" class="nav-link p-0 text-light">About</a></li>
-                    <li class="nav-item mb-2"><a href="{% url 'faq' %}" class="nav-link p-0 text-light">FAQs</a></li>
+                    <li class="nav-item mb-2"><a href="{% url 'about' %}" class="nav-link p-0 text-white">About</a></li>
+                    <li class="nav-item mb-2"><a href="{% url 'faq' %}" class="nav-link p-0 text-white">FAQs</a></li>
                     <li class="nav-item mb-2"><a href="{% url 'contact-form' %}"
-                            class="nav-link p-0 text-light">Contact</a></li>
+                            class="nav-link p-0 text-white">Contact</a></li>
                 </ul>
             </div>
 
             <!-- My Account Section -->
             <div class="col-12 col-md-4 mb-3 pl-5">
                 {% if user.is_authenticated %}
-                <h5 class="text-uppercase mb-3">My Account</h5>
+                <h4 class="text-uppercase mb-3">My Account</h4>
                 <ul class="nav flex-column">
-                    <li class="nav-item mb-2"><a href="{% url 'profile' %}" class="nav-link p-0 text-light">My
+                    <li class="nav-item mb-2"><a href="{% url 'profile' %}" class="nav-link p-0 text-white">My
                             Profile</a></li>
                     <li class="nav-item mb-2"><a href="{% url 'account_logout' %}"
-                            class="nav-link p-0 text-light">Logout</a></li>
+                            class="nav-link p-0 text-white">Logout</a></li>
                 </ul>
                 {% else %}
                 <h5 class="text-uppercase mb-3">Account</h5>
                 <ul class="nav flex-column">
                     <li class="nav-item mb-2"><a href="{% url 'account_signup' %}"
-                            class="nav-link p-0 text-light">Register</a></li>
+                            class="nav-link p-0 text-white">Register</a></li>
                     <li class="nav-item mb-2"><a href="{% url 'account_login' %}"
-                            class="nav-link p-0 text-light">Login</a></li>
+                            class="nav-link p-0 text-white">Login</a></li>
                 </ul>
                 {% endif %}
             </div>
@@ -238,7 +238,7 @@
                     <p class="footer-credit-text">Site designed & developed by Gary Broderick</p>
                 </li>
                 <li class="ml-3"><a class="link-body-emphasis" rel="author"
-                        href="https://github.com/gbroder24/arthub_v1.0" target="_blank"><i
+                        href="https://github.com/gbroder24/arthub_v1.0" target="_blank" aria-label="Github"><i
                             class="fa-brands fa-github footer-credit-icon"></i></a></li>
             </ul>
         </div>
