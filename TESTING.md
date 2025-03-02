@@ -435,11 +435,16 @@ While testing the checkout process of the checkout app, I could not seem to rede
 ## Bugs
 
 
-- Nav Hamburger Menu Does Not Open When Clicked
+- A user can view another users checkout success order.  
+
+- A logged in user can view another users profile order history.
 
     ![screenshot](https://user-images.githubusercontent.com/122794277/273968525-4b07fc54-aec3-41c7-b157-47a5fde0142f.png)
 
-    - The issue was that the incorrect script was being imported in the base.html file. Popper (which Bootstrap relies on for things like the hamburger menu functionality) was not being imported. Fixed by swapping the bootstrap import script for the script which includes Popper
+    - Coded login_required decorator before the view function was declared `@login_required`, ensures the user is logged in before accessing this view. If not logged in, they are redirected to the login page.  
+    - Order is linked to a user. The code checks if the order is linked to a user profile (order.user_profile). If it is, it ensures that the logged-in user is the one who placed the order by fetching the logged-in user’s UserProfile.  
+    - If no UserProfile exists for the user, an error message is displayed.
+    - If the logged-in user’s profile does not match the order’s user profile, a permission error message is shown.
 
 - Category filter in Navbar not filtering products
 
