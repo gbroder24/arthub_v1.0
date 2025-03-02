@@ -943,7 +943,7 @@ Once you've created a Gmail (Google) account and logged-in, follow these series 
   - [ Web Piano Academy ](https://github.com/LewisMDillon/web-piano-academy) project.
   - [Django Documenation](https://www.djangoproject.com/) was used to provide examples of code solutions and Django functionality.
   - [Bootstrap Documenation](https://getbootstrap.com/) was used to provide examples of Bootstrap functionality and building blocks.
-  - [Code Institute walkthrough](https://codeinstitute.net/) as inspiration and code examples, the code institute walkthroughs "Hello Django" and "I Think Therefore I Blog" was used.
+  - [Code Institute walkthrough](https://codeinstitute.net/) as inspiration and code examples, the code institute walkthrough "Boutique Ado" and "Web Piano Academy" was used.
   - [Stack Overflow](https://stackoverflow.com/) - Dozens of different pages were used to assist during development and debuging.
 
 ### Content

@@ -69,12 +69,11 @@ I have used the recommended [PEP8 CI Python Linter](https://pep8ci.herokuapp.com
 ### Bag App
 | File | Screenshot | Notes |
 | --- | --- | --- |
-| apps.py |  ![screenshot](documentation/validation/python/Bag/apps.JPG) | Pass: No Errors |
-| bagtools |  ![screenshot](documentation/validation/python/Bag/apps.JPG) | Pass: No Errors |
-| contexts.py | ![screenshot](documentation/validation/python/Bag/contexts.JPG) | Pass: No Errors |
-| tests.py |  ![screenshot](documentation/validation/python/Bag/tests.JPG) | Pass: No Errors |
-| urls.py | ![screenshot](documentation/validation/python/Bag/urls.JPG) | Pass: No Errors |
-| views.py |  ![screenshot](documentation/validation/python/Bag/views.JPG) | Pass: No Errors |
+| apps.py |  ![screenshot](documentation/validation/python/bag/apps.JPG) | Pass: No Errors |
+| bagtools |  ![screenshot](documentation/validation/python/bag/apps.JPG) | Pass: No Errors |
+| contexts.py | ![screenshot](documentation/validation/python/bag/contexts.JPG) | Pass: No Errors |
+| urls.py | ![screenshot](documentation/validation/python/bag/urls.JPG) | Pass: No Errors |
+| views.py |  ![screenshot](documentation/validation/python/bag/views.JPG) | Pass: No Errors |
 
 ### Checkout App
 | File | Screenshot | Notes |
@@ -85,7 +84,6 @@ I have used the recommended [PEP8 CI Python Linter](https://pep8ci.herokuapp.com
 | init.py |  ![screenshot](documentation/validation/python/checkout/init.JPG) | Pass: No Errors |
 | models.py |  ![screenshot](documentation/validation/python/checkout/models.JPG) | Pass: No Errors |
 | signals.py |  ![screenshot](documentation/validation/python/checkout/signals.JPG) | Pass: No Errors |
-| tests.py |  ![screenshot](documentation/validation/python/checkout/tests.JPG) | Pass: No Errors |
 | urls.py |  ![screenshot](documentation/validation/python/checkout/urls.JPG) | Pass: No Errors |
 | views.py |  ![screenshot](documentation/validation/python/checkout/views.JPG) | Pass: No Errors |
 | webhook_handler.py |  ![screenshot](documentation/validation/python/checkout/webhook-handler.JPG) | Pass: No Errors |
@@ -97,7 +95,6 @@ I have used the recommended [PEP8 CI Python Linter](https://pep8ci.herokuapp.com
 | admin.py |  ![screenshot](documentation/validation/python/contact/admin.JPG) | Pass: No Errors |
 | apps.py |  ![screenshot](documentation/validation/python/contact/apps.JPG) | Pass: No Errors |
 | models.py |  ![screenshot](documentation/validation/python/contact/models.JPG) | Pass: No Errors |
-| tests.py |  ![screenshot](documentation/validation/python/contact/tests.JPG) | Pass: No Errors |
 | urls.py |  ![screenshot](documentation/validation/python/contact/urls.JPG) | Pass: No Errors |
 | views.py |  ![screenshot](documentation/validation/python/contact/views.JPG) | Pass: No Errors |
 
@@ -107,7 +104,6 @@ I have used the recommended [PEP8 CI Python Linter](https://pep8ci.herokuapp.com
 | admin.py | ![screenshot](documentation/validation/python/faq/admin.JPG) | Pass: No Errors |
 | apps.py |  ![screenshot](documentation/validation/python/faq/apps.JPG) | Pass: No Errors |
 | models.py | ![screenshot](documentation/validation/python/faq/models.JPG) | Pass: No Errors |
-| tests.py | ![screenshot](documentation/validation/python/faq/tests.JPG) | Pass: No Errors |
 | urls.py | ![screenshot](documentation/validation/python/faq/urls.JPG) | Pass: No Errors |
 | views.py | ![screenshot](documentation/validation/python/faq/views.JPG) | Pass: No Errors |
 
@@ -115,7 +111,6 @@ I have used the recommended [PEP8 CI Python Linter](https://pep8ci.herokuapp.com
 | File | Screenshot | Notes |
 | --- | --- | --- |
 | apps.py | ![screenshot](documentation/validation/python/home/apps.JPG) | Pass: No Errors |
-| tests.py | ![screenshot](documentation/validation/python/home/tests.JPG) | Pass: No Errors |
 | urls.py | ![screenshot](documentation/validation/python/home/urls.JPG) | Pass: No Errors |
 | views.py | ![screenshot](documentation/validation/python/home/views.JPG) | Pass: No Errors |
 
@@ -125,7 +120,6 @@ I have used the recommended [PEP8 CI Python Linter](https://pep8ci.herokuapp.com
 | admin.py | ![screenshot](documentation/validation/python/newsletter/admin.JPG) | Pass: No Errors |
 | apps.py | ![screenshot](documentation/validation/python/newsletter/apps.JPG) | Pass: No Errors |
 | models.py | ![screenshot](documentation/validation/python/newsletter/models.JPG) | Pass: No Errors |
-| tests.py | ![screenshot](documentation/validation/python/newsletter/tests.JPG) | Pass: No Errors |
 | urls.py | ![screenshot](documentation/validation/python/newsletter/urls.JPG) | Pass: No Errors |
 | views.py | ![screenshot](documentation/validation/python/newsletter/views.JPG) | Pass: No Errors |
 
@@ -136,7 +130,6 @@ I have used the recommended [PEP8 CI Python Linter](https://pep8ci.herokuapp.com
 | apps.py | ![screenshot](documentation/validation/python/products/apps.JPG) | Pass: No Errors |
 | forms.py | ![screenshot](documentation/validation/python/products/forms.JPG) | Pass: No Errors |
 | models.py | ![screenshot](documentation/validation/python/products/models.JPG) | Pass: No Errors |
-| tests.py | ![screenshot](documentation/validation/python/products/tests.JPG) | Pass: No Errors |
 | urls.py | ![screenshot](documentation/validation/python/products/urls.JPG) | Pass: No Errors |
 | views.py | ![screenshot](documentation/validation/python/products/views.JPG) | Pass: No Errors |
 | widgets.py | ![screenshot](documentation/validation/python/products/widgets.JPG) | Pass: No Errors |
@@ -147,7 +140,6 @@ I have used the recommended [PEP8 CI Python Linter](https://pep8ci.herokuapp.com
 | apps.py | ![screenshot](documentation/validation/python/profiles/apps.JPG) | Pass: No Errors |
 | forms.py | ![screenshot](documentation/validation/python/profiles/forms.JPG) | Pass: No Errors |
 | models.py | ![screenshot](documentation/validation/python/profiles/models.JPG) | Pass: No Errors |
-| tests.py | ![screenshot](documentation/validation/python/profiles/tests.JPG) | Pass: No Errors |
 | urls.py | ![screenshot](documentation/validation/python/profiles/urls.JPG) | Pass: No Errors |
 | views.py | ![screenshot](documentation/validation/python/profiles/views.JPG) | Pass: No Errors |
 
