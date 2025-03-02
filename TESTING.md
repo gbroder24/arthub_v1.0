@@ -386,11 +386,6 @@ Defensive programming was manually tested with the below user acceptance testing
 | As a user I can create a profile after I make a purchase so that I can use the details provided during checkout to easily create a profile with all of my information pre-filled | PASS |
 | As a user I can see and edit my profile page so that my profile details are viewable, and I can change them to match any changes in my information | PASS |
 
-## Automated Testing
-
-
-
-
 ## Bugs
 
 ### Data Protection
