@@ -9,7 +9,7 @@ def bag_contents(request):
     bag_items = []
     total_with_discount = 0
     product_count = 0
-    # discount_percentage = 0
+
     bag = request.session.get('bag', {})
 
     for item_id, quantity in bag.items():
@@ -17,7 +17,7 @@ def bag_contents(request):
         # Apply discount to the product price for total
         discounted_price = product.price * Decimal(
             1 - product.discount_percentage / 100
-            )
+        )
         total_with_discount += quantity * discounted_price
         product_count += quantity
         bag_items.append({
@@ -28,18 +28,13 @@ def bag_contents(request):
             'discounted_price': discounted_price,
         })
 
-    # Apply % discount to the total
-    # discount_percentage = settings.DISCOUNT_PERCENTAGE  # % discount
-    # total_with_discount =
-    # total * Decimal(1 - discount_percentage / 100)
-
     if total_with_discount < settings.FREE_DELIVERY_THRESHOLD:
         delivery = total_with_discount * Decimal(
             settings.STANDARD_DELIVERY_PERCENTAGE / 100
-            )
+        )
         free_delivery_delta = (
             settings.FREE_DELIVERY_THRESHOLD - total_with_discount
-            )
+        )
     else:
         delivery = 0
         free_delivery_delta = 0

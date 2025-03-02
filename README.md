@@ -334,7 +334,9 @@ It was important to me from the beginning that Arthub is accessible to an unregi
 
 ### Stripe
 
+- The webhook handler integration ensures that orders are recorded correctly, user profiles are updated, and customers are notified upon successful payments.
 
+- The Webhook setup ensures secure and correct processing of Stripe webhooks in the Django application.
 
 ![ Stripe ](documentation/features/stripe-events.JPG)
 
@@ -412,6 +414,16 @@ It was important to me from the beginning that Arthub is accessible to an unregi
 ![ Newsletter ](documentation/features/newsletter-subscribe.JPG)
 
 ![ Newsletter ](documentation/features/unsubscribe.JPG)
+
+### User Email Confirmations
+
+- After making a purchase or subscribing to the newsletter, the site automatically sends the user a confirmation email which contains their purchase details, or in the case of newsletter subscription, a thank you message and a link to unsubscribe.
+
+![screenshot](documentation/features/user/verify-email-confirmation.JPG)
+
+![screenshot](documentation/features/user/order-email-confirmation.JPG)
+
+![screenshot](documentation/features/user/subscribe-email-confirmation.JPG)
 
 ### Error 404
 
@@ -511,7 +523,7 @@ urllib3==2.3.0
 
 ## Testing  
 
-Test scenarios for the Failte Bistro application were created by the Junior Full Stack Software Developer (Gary Broderick). User testing (by family and friends) was also executed. Automated testing was used during the final development phase of the project. For all testing, please refer to the [TESTING.md](TESTING.md) file.
+Test scenarios for the Arthub application were created by the Junior Full Stack Software Developer (Gary Broderick). User testing (by family and friends) was also executed. Automated testing was used during the final development phase of the project. For all testing, please refer to the [TESTING.md](TESTING.md) file.
 
 ## Deployment
 
@@ -928,19 +940,16 @@ Once you've created a Gmail (Google) account and logged-in, follow these series 
 ## Credits
 
 ### Code
-  - [ The Bear ](https://github.com/JCav23/Project4-TheBear/) project.
-  - [ Tribe ](https://github.com/adamgilroy22/tribe/) project.
+  - [ Web Piano Academy ](https://github.com/LewisMDillon/web-piano-academy) project.
   - [Django Documenation](https://www.djangoproject.com/) was used to provide examples of code solutions and Django functionality.
   - [Bootstrap Documenation](https://getbootstrap.com/) was used to provide examples of Bootstrap functionality and building blocks.
   - [Code Institute walkthrough](https://codeinstitute.net/) as inspiration and code examples, the code institute walkthroughs "Hello Django" and "I Think Therefore I Blog" was used.
   - [Stack Overflow](https://stackoverflow.com/) - Dozens of different pages were used to assist during development and debuging.
 
 ### Content
-  - [ The Bear ](https://github.com/JCav23/Project4-TheBear/) project.
-  - [ Tribe ](https://github.com/adamgilroy22/tribe/) project.
-  - [ Free Fido ](https://github.com/amylour/FreeFido_v2/) project.
-  - [ Matt The Thresher ](https://matts.ie/matts-tipperary/) restaurant.
-  - [ Cornstore ](https://cornstorelimerick.ie/) restaurant.
+  - [ Web Piano Academy ](https://github.com/LewisMDillon/web-piano-academy) project.
+  - [ Addidas ](https://www.adidas.ie/) clothing online store.
+  - [ Next ](https://www.next.ie/en) clothing online store.
 
 
 ### Media
@@ -950,6 +959,7 @@ Once you've created a Gmail (Google) account and logged-in, follow these series 
 ### Acknowledgements
   - My Code Institute Mentor Rory Patrick Sheridan for feedback and suggestions.
   - My Code Institute Cohort Facilitator Lewis Dillon for project ideas and information.
+  - My Code Institute Tutor Rebecca for the suggestion of the login decorator of the checkout success.
   - My family, who helped keep me motivated during this challenging and fun project.
 
 [🔼 Back to top](#user-experience-ux)

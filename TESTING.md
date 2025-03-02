@@ -388,103 +388,50 @@ Defensive programming was manually tested with the below user acceptance testing
 
 ## Automated Testing
 
-I have conducted a series of automated tests on my application.
 
-I fully acknowledge and understand that, in a real-world scenario, an extensive set of additional tests would be more comprehensive.
-
-### Python (Unit Testing)
-
-I have used Django's built-in unit testing framework to test the application functionality.
-
-In order to run the tests, I ran the following command in the terminal each time:
-
-`python3 manage.py test name-of-app `
-
-To create the coverage report, I would then run the following commands:
-
-`coverage run --source=name-of-app manage.py test`
-
-`coverage report`
-
-To see the HTML version of the reports, and find out whether some pieces of code were missing, I ran the following commands:
-
-`coverage html`
-
-`python3 -m http.server`
-
-Below are the results from the various apps on my application that I've tested:
-
-| App | File | Coverage | Screenshot |
-| --- | --- | --- | --- |
-| Bag | tests.py | 93% | ![screenshot](documentation/py-test/Bag.png) |
-| checkout | tests.py | 74% | ![screenshot](documentation/py-test/checkout.png) |
-| contact | tests.py | 97% | ![screenshot](documentation/py-test/contact.png) |
-| faq | tests.py | 98% | ![screenshot](documentation/py-test/faq.png) |
-| home | tests.py | 100% | ![screenshot](documentation/py-test/home.png) |
-| newsletter | tests.py | 95% | ![screenshot](documentation/py-test/newsletter.png) |
-| products | tests.py | 88% | ![screenshot](documentation/py-test/products.png) |
-| profiles | tests.py | 96% | ![screenshot](documentation/py-test/profiles.png) |
-
-#### Unit Test Issues
-
-While testing the checkout process of the checkout app, I could not seem to redefine the `pid` variable for the purposes of the test. Even when explicitly redeclaring `pid = x`, the test would overwrite it with the value from the views.py. To circumvent this, I put the `stripe pid` into my environment variables and created a line of code in the checkout view, to be used for this specific test purpose only:
-
-![screenshot](documentation/unittest-code-line.png)
 
 
 ## Bugs
 
+### Data Protection
 
 - A user can view another users checkout success order.  
 
 - A logged in user can view another users profile order history.
 
-    ![screenshot](https://user-images.githubusercontent.com/122794277/273968525-4b07fc54-aec3-41c7-b157-47a5fde0142f.png)
+- Unregistered user
 
-    - Coded login_required decorator before the view function was declared `@login_required`, ensures the user is logged in before accessing this view. If not logged in, they are redirected to the login page.  
-    - Order is linked to a user. The code checks if the order is linked to a user profile (order.user_profile). If it is, it ensures that the logged-in user is the one who placed the order by fetching the logged-in user’s UserProfile.  
-    - If no UserProfile exists for the user, an error message is displayed.
-    - If the logged-in user’s profile does not match the order’s user profile, a permission error message is shown.
+![screenshot](documentation/bugs/anonymous_user.JPG)
 
-- Category filter in Navbar not filtering products
+- Unregistered user viewing another users order
 
-    ![screenshot](https://user-images.githubusercontent.com/122794277/275524067-ce16c9e9-27de-470b-b4ca-f43e41913a3e.png)
+![screenshot](documentation/bugs/sensitive_info.JPG)
 
-    - To fix this, I corrected a syntax error in the product view, which was invalidating the category filter.
+#### Solution
 
-- Webhook process not functioning correctly
+- The @login_required decorator ensures that a user must be logged in to access this view. If the user is not logged in, they'll be redirected to the login page.
 
-    ![screenshot](https://user-images.githubusercontent.com/122794277/276716621-37bac7ad-5ab1-4c86-8568-8fd1f47bdfca.png)
+- The order_number passed to the view is used to retrieve an Order object from the database using get_object_or_404, which will either return the order or raise a 404 error if not found.
 
-    - Fixed - Stripe was not getting it's necessary keys from the environment variables as I had thought. dotenv was incorrectly implemented in checkout > views.py
+- If the logged-in user’s profile exists, it is fetched.
 
-There was also a missing path in checkout > urls.py (cache_checkout_data)
+- If the user_profile of the order does not match the logged-in user’s profile, the user is denied access and shown a 404 error page.
 
-- Automate Test For Checkout Process Taking Variable From View
+- If no user_profile is associated with the order, the view tries to assign the logged-in user’s profile to the order (if they are authenticated). This is useful when the order was initially made without a user profile but is later associated with a logged-in user.
 
-    ![screenshot](https://user-images.githubusercontent.com/122794277/282067953-253c594d-a4ca-49c0-ae2f-e14a9adf1d9d.png)
-    ![screenshot](https://user-images.githubusercontent.com/122794277/282067976-25ca2683-25fb-4c24-9a4f-a56924c41014.png)
+- The above solution is implemented in the checkout app checkout success view and the profiles app order history view.
 
-    - Got around this issue by redeclaring the pid variable in the view itself. Use of environment variables means that the pid variable is never published
+### Empty Quantity Input
 
-- Text Area In Contact Response Form Indentation
+- A user can leave the product quantity input field empty caucing an error.
 
-    ![screenshot](https://user-images.githubusercontent.com/122794277/282066638-058da0e1-3510-43aa-8efb-92051d7ecc17.png)
+![screenshot](documentation/bugs/qty-input-empty.JPG)
 
-    - Fixed this issue by using unicode in the HTML file for line breaks
+![screenshot](documentation/bugs/qty-input-empty-error.JPG)
 
+#### Solution
 
-### GitHub **Issues**
-
-**Fixed Bugs**
-
-All previously closed/fixed bugs can be tracked [here](https://github.com/LewisMDillon/web-piano-academy/issues?q=is%3Aissue+is%3Aclosed+label%3Abug).
-
-
-**Open Issues**
-
-Any remaining open issues can be tracked [here](https://github.com/LewisMDillon/web-piano-academy/issues?q=is%3Aissue+label%3Abug+is%3Aopen).
-
+- When a user leaves the quantity input field empty the following code automatically enters a quantity of 1 in the field `quantity = int(request.POST.get('quantity') or 1)`
 
 ## Unfixed Bugs
 
