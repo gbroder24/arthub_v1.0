@@ -386,4 +386,103 @@ Defensive programming was manually tested with the below user acceptance testing
 | As a user I can create a profile after I make a purchase so that I can use the details provided during checkout to easily create a profile with all of my information pre-filled | PASS |
 | As a user I can see and edit my profile page so that my profile details are viewable, and I can change them to match any changes in my information | PASS |
 
+## Automated Testing
+
+I have conducted a series of automated tests on my application.
+
+I fully acknowledge and understand that, in a real-world scenario, an extensive set of additional tests would be more comprehensive.
+
+### Python (Unit Testing)
+
+I have used Django's built-in unit testing framework to test the application functionality.
+
+In order to run the tests, I ran the following command in the terminal each time:
+
+`python3 manage.py test name-of-app `
+
+To create the coverage report, I would then run the following commands:
+
+`coverage run --source=name-of-app manage.py test`
+
+`coverage report`
+
+To see the HTML version of the reports, and find out whether some pieces of code were missing, I ran the following commands:
+
+`coverage html`
+
+`python3 -m http.server`
+
+Below are the results from the various apps on my application that I've tested:
+
+| App | File | Coverage | Screenshot |
+| --- | --- | --- | --- |
+| Bag | tests.py | 93% | ![screenshot](documentation/py-test/Bag.png) |
+| checkout | tests.py | 74% | ![screenshot](documentation/py-test/checkout.png) |
+| contact | tests.py | 97% | ![screenshot](documentation/py-test/contact.png) |
+| faq | tests.py | 98% | ![screenshot](documentation/py-test/faq.png) |
+| home | tests.py | 100% | ![screenshot](documentation/py-test/home.png) |
+| newsletter | tests.py | 95% | ![screenshot](documentation/py-test/newsletter.png) |
+| products | tests.py | 88% | ![screenshot](documentation/py-test/products.png) |
+| profiles | tests.py | 96% | ![screenshot](documentation/py-test/profiles.png) |
+
+#### Unit Test Issues
+
+While testing the checkout process of the checkout app, I could not seem to redefine the `pid` variable for the purposes of the test. Even when explicitly redeclaring `pid = x`, the test would overwrite it with the value from the views.py. To circumvent this, I put the `stripe pid` into my environment variables and created a line of code in the checkout view, to be used for this specific test purpose only:
+
+![screenshot](documentation/unittest-code-line.png)
+
+
+## Bugs
+
+
+- Nav Hamburger Menu Does Not Open When Clicked
+
+    ![screenshot](https://user-images.githubusercontent.com/122794277/273968525-4b07fc54-aec3-41c7-b157-47a5fde0142f.png)
+
+    - The issue was that the incorrect script was being imported in the base.html file. Popper (which Bootstrap relies on for things like the hamburger menu functionality) was not being imported. Fixed by swapping the bootstrap import script for the script which includes Popper
+
+- Category filter in Navbar not filtering products
+
+    ![screenshot](https://user-images.githubusercontent.com/122794277/275524067-ce16c9e9-27de-470b-b4ca-f43e41913a3e.png)
+
+    - To fix this, I corrected a syntax error in the product view, which was invalidating the category filter.
+
+- Webhook process not functioning correctly
+
+    ![screenshot](https://user-images.githubusercontent.com/122794277/276716621-37bac7ad-5ab1-4c86-8568-8fd1f47bdfca.png)
+
+    - Fixed - Stripe was not getting it's necessary keys from the environment variables as I had thought. dotenv was incorrectly implemented in checkout > views.py
+
+There was also a missing path in checkout > urls.py (cache_checkout_data)
+
+- Automate Test For Checkout Process Taking Variable From View
+
+    ![screenshot](https://user-images.githubusercontent.com/122794277/282067953-253c594d-a4ca-49c0-ae2f-e14a9adf1d9d.png)
+    ![screenshot](https://user-images.githubusercontent.com/122794277/282067976-25ca2683-25fb-4c24-9a4f-a56924c41014.png)
+
+    - Got around this issue by redeclaring the pid variable in the view itself. Use of environment variables means that the pid variable is never published
+
+- Text Area In Contact Response Form Indentation
+
+    ![screenshot](https://user-images.githubusercontent.com/122794277/282066638-058da0e1-3510-43aa-8efb-92051d7ecc17.png)
+
+    - Fixed this issue by using unicode in the HTML file for line breaks
+
+
+### GitHub **Issues**
+
+**Fixed Bugs**
+
+All previously closed/fixed bugs can be tracked [here](https://github.com/LewisMDillon/web-piano-academy/issues?q=is%3Aissue+is%3Aclosed+label%3Abug).
+
+
+**Open Issues**
+
+Any remaining open issues can be tracked [here](https://github.com/LewisMDillon/web-piano-academy/issues?q=is%3Aissue+label%3Abug+is%3Aopen).
+
+
+## Unfixed Bugs
+
+There are no remaining bugs that I am aware of.
+
 [🔼 Back to top](#testing)

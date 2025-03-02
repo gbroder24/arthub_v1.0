@@ -151,13 +151,14 @@ def checkout_success(request, order_number):
             profile = UserProfile.objects.get(user=request.user)
         except UserProfile.DoesNotExist:
             messages.error(request, "User profile not found.")
-            return render(request, "errors/404.html", status=404)
+            return render(request, "home/index.html")
 
         # Check if the logged-in user has permission to view the order
         if order.user_profile != profile:
             messages.error(
                 request, "You do not have permission to view this order.")
-            return render(request, "errors/404.html", status=404)
+            return render(request, "home/index.html")
+
     else:
         if request.user.is_authenticated:
             profile = UserProfile.objects.get(user=request.user)

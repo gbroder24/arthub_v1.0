@@ -36,6 +36,7 @@ def profile(request):
     return render(request, template, context)
 
 
+@login_required
 def order_history(request, order_number):
     # Get the order object or return 404 if not found
     order = get_object_or_404(Order, order_number=order_number)
@@ -48,19 +49,19 @@ def order_history(request, order_number):
             profile = UserProfile.objects.get(user=request.user)
         except UserProfile.DoesNotExist:
             messages.error(request, "User profile not found.")
-            return render(request, "errors/404.html", status=404)
+            return render(request, "home/index.html")
 
         # Check if the logged-in user has permission to view the order
         if order.user_profile != profile:
             messages.error(
                 request, "You do not have permission to view this order.")
-            return render(request, "errors/404.html", status=404)
+            return render(request, "home/index.html")
 
     else:
         # If the order is anonymous, prevent a logged-in user from viewing it
         if request.user.is_authenticated:
             messages.error(request, "You cannot view an anonymous order.")
-            return render(request, "errors/404.html", status=404)
+            return render(request, "home/index.html")
 
     # Success message for valid order
     messages.info(request, (
